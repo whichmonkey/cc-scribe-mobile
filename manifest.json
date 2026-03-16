@@ -2,7 +2,9 @@
   "name": "CC Scribe Mobile",
   "short_name": "CC Scribe",
   "description": "Live Mandarin to English+Polish translation for Buddhist dharma talks",
-  "start_url": ".",
+  "start_url": "/cc-scribe-mobile/",
+  "scope": "/cc-scribe-mobile/",
+  "id": "/cc-scribe-mobile/",
   "display": "standalone",
   "background_color": "#0f0f1a",
   "theme_color": "#0f0f1a",
@@ -11,12 +13,14 @@
     {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
