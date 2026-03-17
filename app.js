@@ -22,6 +22,7 @@ const HALLUCINATION_BLOCKLIST = [
   'thank you for watching', 'thanks for watching', 'please subscribe',
   '字幕由', '字幕提供', '感谢观看', '请订阅', '謝謝觀看', '請訂閱',
   'ming pao', '明報', '明报',
+  '多謝您收睇', '多谢您收睇', '時局新聞', '时局新闻', '收睇',
 ];
 
 // ---------------------------------------------------------------------------
