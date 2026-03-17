@@ -94,7 +94,9 @@ let glossaryEntries    = [];   // Full glossary array
 let zhCorrections      = [];   // [{wrong, correct}] for homophone fixes
 let systemPrompt       = '';   // Claude system prompt with glossary
 
-// Supabase
+// Supabase defaults (anon key is safe to expose — it's a public, read/insert-only key)
+const SUPABASE_DEFAULT_URL = 'https://zkfhuuprrzjlbnixumog.supabase.co';
+const SUPABASE_DEFAULT_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprZmh1dXBycnpqbGJuaXh1bW9nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3ODIwODksImV4cCI6MjA4OTM1ODA4OX0.JhI_thkVQqc1HbbN9xagdAGn848Re3RL6h-ZpmvNIWA';
 let supabaseClient = null;
 
 // ---------------------------------------------------------------------------
@@ -105,8 +107,8 @@ function loadSettings() {
   openaiKeyInput.value    = localStorage.getItem('ccscribe_openai_key') || '';
   anthropicKeyInput.value = localStorage.getItem('ccscribe_anthropic_key') || '';
   workerUrlInput.value    = localStorage.getItem('ccscribe_worker_url') || '';
-  supabaseUrlInput.value  = localStorage.getItem('ccscribe_supabase_url') || '';
-  supabaseKeyInput.value  = localStorage.getItem('ccscribe_supabase_key') || '';
+  supabaseUrlInput.value  = localStorage.getItem('ccscribe_supabase_url') || SUPABASE_DEFAULT_URL;
+  supabaseKeyInput.value  = localStorage.getItem('ccscribe_supabase_key') || SUPABASE_DEFAULT_KEY;
 
   showZh.checked = localStorage.getItem('ccscribe_show_zh') !== 'false';
   showEn.checked = localStorage.getItem('ccscribe_show_en') !== 'false';
@@ -631,8 +633,8 @@ feed.addEventListener('scroll', () => {
 // ---------------------------------------------------------------------------
 
 function initSupabase() {
-  const url = supabaseUrlInput.value.trim();
-  const key = supabaseKeyInput.value.trim();
+  const url = (supabaseUrlInput ? supabaseUrlInput.value.trim() : '') || SUPABASE_DEFAULT_URL;
+  const key = (supabaseKeyInput ? supabaseKeyInput.value.trim() : '') || SUPABASE_DEFAULT_KEY;
   if (!url || !key || typeof supabase === 'undefined') {
     supabaseClient = null;
     return;
