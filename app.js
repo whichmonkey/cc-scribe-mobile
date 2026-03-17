@@ -21,6 +21,7 @@ const HALLUCINATION_BLOCKLIST = [
   'subtitles', 'amara.org', 'subscribe', 'like and subscribe',
   'thank you for watching', 'thanks for watching', 'please subscribe',
   '字幕由', '字幕提供', '感谢观看', '请订阅', '謝謝觀看', '請訂閱',
+  'ming pao', '明報', '明报',
 ];
 
 // ---------------------------------------------------------------------------
@@ -344,8 +345,15 @@ function parseClaudeResponse(text) {
     }
   }
 
-  // Fallback: treat entire response as English
+  // Fallback: treat entire response as English — but detect Claude refusals
   if (!english && !polish) {
+    const lower = text.toLowerCase();
+    if (lower.includes('i cannot translate') || lower.includes('i need to clarify')
+        || lower.includes('not a buddhist') || lower.includes('outside my specified')
+        || lower.includes('i appreciate the reminder') || text.length > 300) {
+      // Claude refused or produced a long non-translation — skip
+      return { english: '', polish: '' };
+    }
     english = text.trim();
   }
 
@@ -374,6 +382,7 @@ async function processChunk(blob) {
 
     // 4. Claude translation
     const { english, polish } = await callClaude(chinese);
+    if (!english && !polish) return; // Claude refusal or hallucination — skip
 
     // 5. Build segment
     const segment = {

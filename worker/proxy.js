@@ -33,10 +33,17 @@ export default {
     const openaiPath = url.pathname.replace('/openai', '');
     const openaiUrl = `https://api.openai.com${openaiPath}`;
 
-    // Forward the request (headers + body intact)
+    // Build clean headers — forward Authorization and Content-Type (not host, origin, etc.)
+    const proxyHeaders = new Headers();
+    const auth = request.headers.get('Authorization');
+    if (auth) proxyHeaders.set('Authorization', auth);
+    const contentType = request.headers.get('Content-Type');
+    if (contentType) proxyHeaders.set('Content-Type', contentType);
+
+    // Forward the request
     const proxyResponse = await fetch(openaiUrl, {
       method: request.method,
-      headers: request.headers,
+      headers: proxyHeaders,
       body: request.body,
     });
 
