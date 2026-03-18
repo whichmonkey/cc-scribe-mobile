@@ -383,9 +383,12 @@ async function processChunk(blob) {
     // 3. Glossary homophone correction
     const chinese = correctChinese(cleaned);
 
-    // 4. Claude translation
-    const { english, polish } = await callClaude(chinese);
-    if (!english && !polish) return; // Claude refusal or hallucination — skip
+    // 4. Claude translation (skip if no EN/PL needed on any display)
+    const needsTranslation = showEn.checked || showPl.checked || liveEn.checked || livePl.checked;
+    let english = '', polish = '';
+    if (needsTranslation) {
+      ({ english, polish } = await callClaude(chinese));
+    }
 
     // 5. Build segment
     const segment = {
