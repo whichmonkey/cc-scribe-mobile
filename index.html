@@ -116,6 +116,7 @@
             <label for="supabase-key">Supabase Key</label>
             <input type="password" id="supabase-key" placeholder="eyJ..." autocomplete="off">
           </div>
+          <button id="share-config-btn" class="share-config-btn">Share Config</button>
         </div>
       </div>
     </div>
@@ -123,6 +124,20 @@
 
   <!-- Overlay for settings -->
   <div id="settings-overlay" class="settings-overlay hidden"></div>
+
+  <!-- PIN dialog -->
+  <div id="pin-overlay" class="pin-overlay hidden"></div>
+  <div id="pin-dialog" class="pin-dialog hidden">
+    <h3 id="pin-title">Enter PIN</h3>
+    <p id="pin-subtitle" class="pin-subtitle"></p>
+    <input type="tel" id="pin-input" class="pin-input" maxlength="6"
+           pattern="[0-9]*" inputmode="numeric" placeholder="4-6 digits" autocomplete="off">
+    <div id="pin-error" class="pin-error hidden"></div>
+    <div class="pin-actions">
+      <button id="pin-cancel" class="pin-btn">Cancel</button>
+      <button id="pin-confirm" class="pin-btn pin-btn-confirm">OK</button>
+    </div>
+  </div>
 
   <!-- Toast -->
   <div id="toast" class="toast hidden"></div>

@@ -3,7 +3,7 @@
  * Stale-while-revalidate: serve from cache, update in background.
  */
 
-const CACHE_NAME = 'cc-scribe-v1';
+const CACHE_NAME = 'cc-scribe-v2';
 const ASSETS = [
   './',
   'index.html',

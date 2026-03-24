@@ -24,6 +24,7 @@ const HALLUCINATION_BLOCKLIST = [
   'ming pao', '明報', '明报',
   '多謝您收睇', '多谢您收睇', '時局新聞', '时局新闻', '收睇',
   '多謝您', '多谢您', '再會', '再会',
+  '點贊', '点赞', '訂閱', '订阅', '打賞', '打赏',
 ];
 
 // ---------------------------------------------------------------------------
@@ -99,6 +100,210 @@ let systemPrompt       = '';   // Claude system prompt with glossary
 const SUPABASE_DEFAULT_URL = 'https://zkfhuuprrzjlbnixumog.supabase.co';
 const SUPABASE_DEFAULT_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprZmh1dXBycnpqbGJuaXh1bW9nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3ODIwODksImV4cCI6MjA4OTM1ODA4OX0.JhI_thkVQqc1HbbN9xagdAGn848Re3RL6h-ZpmvNIWA';
 let supabaseClient = null;
+
+// ---------------------------------------------------------------------------
+// Crypto utilities (Web Crypto API — AES-GCM + PBKDF2)
+// ---------------------------------------------------------------------------
+
+function bytesToHex(buf) {
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function hexToBytes(hex) {
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < hex.length; i += 2) bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+  return bytes;
+}
+
+function toBase64Url(buf) {
+  const bytes = new Uint8Array(buf);
+  let binary = '';
+  for (const b of bytes) binary += String.fromCharCode(b);
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function fromBase64Url(str) {
+  let b64 = str.replace(/-/g, '+').replace(/_/g, '/');
+  while (b64.length % 4) b64 += '=';
+  const binary = atob(b64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return bytes.buffer;
+}
+
+async function encryptConfig(configObj, pin) {
+  const enc = new TextEncoder();
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv   = crypto.getRandomValues(new Uint8Array(12));
+
+  const baseKey = await crypto.subtle.importKey('raw', enc.encode(pin), 'PBKDF2', false, ['deriveKey']);
+  const aesKey  = await crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+    baseKey,
+    { name: 'AES-GCM', length: 256 },
+    false, ['encrypt']
+  );
+
+  const ciphertext = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, aesKey, enc.encode(JSON.stringify(configObj)));
+  return `${bytesToHex(salt)}.${bytesToHex(iv)}.${toBase64Url(ciphertext)}`;
+}
+
+async function decryptConfig(payload, pin) {
+  const parts = payload.split('.');
+  if (parts.length !== 3) throw new Error('Invalid config payload');
+
+  const salt       = hexToBytes(parts[0]);
+  const iv         = hexToBytes(parts[1]);
+  const ciphertext = fromBase64Url(parts[2]);
+
+  const enc     = new TextEncoder();
+  const baseKey = await crypto.subtle.importKey('raw', enc.encode(pin), 'PBKDF2', false, ['deriveKey']);
+  const aesKey  = await crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+    baseKey,
+    { name: 'AES-GCM', length: 256 },
+    false, ['decrypt']
+  );
+
+  const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, aesKey, ciphertext);
+  return JSON.parse(new TextDecoder().decode(plainBuf));
+}
+
+// ---------------------------------------------------------------------------
+// PIN dialog
+// ---------------------------------------------------------------------------
+
+const pinOverlay = document.getElementById('pin-overlay');
+const pinDialog  = document.getElementById('pin-dialog');
+const pinTitle   = document.getElementById('pin-title');
+const pinSubtitle = document.getElementById('pin-subtitle');
+const pinInput   = document.getElementById('pin-input');
+const pinError   = document.getElementById('pin-error');
+const pinCancel  = document.getElementById('pin-cancel');
+const pinConfirm = document.getElementById('pin-confirm');
+
+function showPinDialog(title, subtitle) {
+  return new Promise((resolve) => {
+    pinTitle.textContent = title;
+    pinSubtitle.textContent = subtitle;
+    pinInput.value = '';
+    pinError.classList.add('hidden');
+    pinOverlay.classList.remove('hidden');
+    pinDialog.classList.remove('hidden');
+    setTimeout(() => pinInput.focus(), 100);
+
+    const cleanup = () => {
+      pinOverlay.classList.add('hidden');
+      pinDialog.classList.add('hidden');
+      pinConfirm.onclick = null;
+      pinCancel.onclick = null;
+      pinOverlay.onclick = null;
+      pinInput.onkeydown = null;
+    };
+
+    pinConfirm.onclick = () => {
+      const val = pinInput.value.trim();
+      if (!/^\d{4,6}$/.test(val)) {
+        pinError.textContent = 'PIN must be 4\u20136 digits';
+        pinError.classList.remove('hidden');
+        return;
+      }
+      cleanup();
+      resolve(val);
+    };
+
+    pinInput.onkeydown = (e) => {
+      if (e.key === 'Enter') pinConfirm.onclick();
+    };
+
+    pinCancel.onclick  = () => { cleanup(); resolve(null); };
+    pinOverlay.onclick = () => { cleanup(); resolve(null); };
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Share Config (encrypt + copy URL)
+// ---------------------------------------------------------------------------
+
+const shareConfigBtn = document.getElementById('share-config-btn');
+
+shareConfigBtn.addEventListener('click', async () => {
+  const o = getOpenaiKey();
+  const a = getAnthropicKey();
+  const w = getWorkerUrl();
+
+  if (!o && !a && !w) {
+    showToast('No credentials to share', true);
+    return;
+  }
+
+  if (!window.crypto || !crypto.subtle) {
+    showToast('HTTPS required for encryption', true);
+    return;
+  }
+
+  const pin = await showPinDialog(
+    'Create a PIN',
+    'Choose a 4\u20136 digit PIN to protect your config. Share the PIN separately with the recipient.'
+  );
+  if (!pin) return;
+
+  try {
+    const payload = await encryptConfig({ o, a, w }, pin);
+    const url = `${location.origin}${location.pathname}#config=${payload}`;
+
+    let copied = false;
+    try { await navigator.clipboard.writeText(url); copied = true; } catch {}
+    if (!copied) {
+      const tmp = document.createElement('textarea');
+      tmp.value = url;
+      document.body.appendChild(tmp);
+      tmp.select();
+      document.execCommand('copy');
+      document.body.removeChild(tmp);
+    }
+
+    showToast('Config link copied! Share it with your PIN.');
+  } catch (err) {
+    console.error('Encrypt failed:', err);
+    showToast('Encryption failed', true);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Config import (decrypt from URL hash)
+// ---------------------------------------------------------------------------
+
+async function handleConfigImport(payload) {
+  if (!window.crypto || !crypto.subtle) {
+    showToast('HTTPS required for decryption', true);
+    return;
+  }
+
+  while (true) {
+    const pin = await showPinDialog(
+      'Enter PIN',
+      'Enter the PIN you received to unlock the configuration.'
+    );
+    if (!pin) return; // cancelled
+
+    try {
+      const config = await decryptConfig(payload, pin);
+      if (config.o) localStorage.setItem('ccscribe_openai_key', config.o);
+      if (config.a) localStorage.setItem('ccscribe_anthropic_key', config.a);
+      if (config.w) localStorage.setItem('ccscribe_worker_url', config.w);
+      loadSettings();
+      showToast('Configuration loaded successfully!');
+      return;
+    } catch {
+      // Wrong PIN — show error inline, loop to retry
+      pinError.textContent = 'Wrong PIN or corrupted data. Try again.';
+      pinError.classList.remove('hidden');
+      pinOverlay.classList.remove('hidden');
+      pinDialog.classList.remove('hidden');
+    }
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Settings (localStorage)
@@ -892,6 +1097,13 @@ async function init() {
   loadSettings();
   await loadGlossary();
   initSupabase();
+
+  // Check for encrypted config in URL hash
+  if (location.hash.startsWith('#config=')) {
+    const payload = location.hash.slice('#config='.length);
+    history.replaceState(null, '', location.pathname + location.search);
+    await handleConfigImport(payload);
+  }
 
   // Check for audience mode
   const params = new URLSearchParams(location.search);
