@@ -40,7 +40,7 @@ const levelFill     = document.getElementById('level-fill');
 const feed          = document.getElementById('feed');
 const statusBadge   = document.getElementById('status-badge');
 const shareBtn      = document.getElementById('share-btn');
-const pauseBtn      = document.getElementById('pause-btn');
+const clearBtn      = document.getElementById('clear-btn');
 const saveBtn       = document.getElementById('save-btn');
 const settingsBtn   = document.getElementById('settings-btn');
 const settingsPanel = document.getElementById('settings-panel');
@@ -76,7 +76,6 @@ const supabaseKeyInput  = document.getElementById('supabase-key');
 // ---------------------------------------------------------------------------
 
 let recording     = false;
-let paused        = false;
 let mediaStream   = null;
 let recorder      = null;
 let mimeType      = '';
@@ -94,12 +93,55 @@ let sessionId     = null;  // Random UUID per recording session
 // Glossary state (loaded on init)
 let glossaryEntries    = [];   // Full glossary array
 let zhCorrections      = [];   // [{wrong, correct}] for homophone fixes
+let correctionHits     = new Map(); // { wrong → count } per session
 let systemPrompt       = '';   // Claude system prompt with glossary
 
 // Supabase defaults (anon key is safe to expose — it's a public, read/insert-only key)
 const SUPABASE_DEFAULT_URL = 'https://zkfhuuprrzjlbnixumog.supabase.co';
 const SUPABASE_DEFAULT_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprZmh1dXBycnpqbGJuaXh1bW9nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3ODIwODksImV4cCI6MjA4OTM1ODA4OX0.JhI_thkVQqc1HbbN9xagdAGn848Re3RL6h-ZpmvNIWA';
 let supabaseClient = null;
+
+// ---------------------------------------------------------------------------
+// Session persistence (localStorage)
+// ---------------------------------------------------------------------------
+
+function persistSession() {
+  localStorage.setItem('ccscribe_segments', JSON.stringify(segments));
+  localStorage.setItem('ccscribe_segId', String(segId));
+  localStorage.setItem('ccscribe_sessionId', sessionId || '');
+  localStorage.setItem('ccscribe_elapsedSec', String(elapsedSec));
+}
+
+function restoreSession() {
+  const saved = localStorage.getItem('ccscribe_segments');
+  if (!saved) return;
+
+  try {
+    const restored = JSON.parse(saved);
+    if (!Array.isArray(restored) || restored.length === 0) return;
+
+    segments = restored;
+    segId = parseInt(localStorage.getItem('ccscribe_segId') || '0', 10);
+    sessionId = localStorage.getItem('ccscribe_sessionId') || null;
+    elapsedSec = parseInt(localStorage.getItem('ccscribe_elapsedSec') || '0', 10);
+
+    // Rebuild feed
+    for (const seg of segments) {
+      addSegment(seg);
+    }
+
+    // Restore elapsed display
+    const m = Math.floor(elapsedSec / 60);
+    const s = elapsedSec % 60;
+    elapsedEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+
+    // Enable buttons
+    clearBtn.disabled = false;
+    saveBtn.disabled = false;
+  } catch (e) {
+    console.error('Failed to restore session:', e);
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Crypto utilities (Web Crypto API — AES-GCM + PBKDF2)
@@ -410,8 +452,10 @@ function buildZhCorrections() {
 
 function correctChinese(text) {
   for (const { wrong, correct } of zhCorrections) {
-    if (text.includes(wrong)) {
-      text = text.split(wrong).join(correct);
+    const parts = text.split(wrong);
+    if (parts.length > 1) {
+      correctionHits.set(wrong, (correctionHits.get(wrong) || 0) + parts.length - 1);
+      text = parts.join(correct);
     }
   }
   return text;
@@ -605,6 +649,7 @@ async function processChunk(blob) {
       start_time: elapsedSec,
     };
     segments.push(segment);
+    persistSession();
 
     // 6. Display
     addSegment(segment);
@@ -635,18 +680,18 @@ function createRecorder() {
   const rec = new MediaRecorder(mediaStream, { mimeType });
 
   rec.ondataavailable = (ev) => {
-    if (ev.data.size > 0 && recording && !paused) {
+    if (ev.data.size > 0 && recording) {
       // Fire-and-forget: process concurrently
       processChunk(ev.data);
     }
   };
 
   rec.onstop = () => {
-    if (recording && !paused) {
+    if (recording) {
       recorder = createRecorder();
       recorder.start();
       setTimeout(() => {
-        if (recording && !paused && recorder.state === 'recording') {
+        if (recording && recorder.state === 'recording') {
           recorder.stop();
         }
       }, CHUNK_INTERVAL);
@@ -660,7 +705,7 @@ function startRecorderCycle() {
   recorder = createRecorder();
   recorder.start();
   setTimeout(() => {
-    if (recording && !paused && recorder.state === 'recording') {
+    if (recording && recorder.state === 'recording') {
       recorder.stop();
     }
   }, CHUNK_INTERVAL);
@@ -683,17 +728,16 @@ async function startRecording() {
 
   // Generate session ID (reuse if already created via Share)
   if (!sessionId) sessionId = crypto.randomUUID();
+  correctionHits = new Map();
 
   // Start recording cycle
   startRecorderCycle();
   recording = true;
-  paused = false;
 
   // UI
   recBtn.classList.add('recording');
   recLabel.textContent = 'STOP';
-  pauseBtn.classList.remove('hidden');
-  pauseBtn.disabled = false;
+  clearBtn.disabled = true;
   saveBtn.disabled = true;
   shareBtn.disabled = false;
 
@@ -701,12 +745,10 @@ async function startRecording() {
   elapsedSec = 0;
   elapsedEl.textContent = '00:00';
   elapsedTimer = setInterval(() => {
-    if (!paused) {
-      elapsedSec++;
-      const m = Math.floor(elapsedSec / 60);
-      const s = elapsedSec % 60;
-      elapsedEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-    }
+    elapsedSec++;
+    const m = Math.floor(elapsedSec / 60);
+    const s = elapsedSec % 60;
+    elapsedEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   }, 1000);
 
   // Wake lock
@@ -720,7 +762,6 @@ async function startRecording() {
 
 async function stopRecording() {
   recording = false;
-  paused = false;
 
   if (recorder && recorder.state !== 'inactive') recorder.stop();
   if (mediaStream) {
@@ -735,32 +776,38 @@ async function stopRecording() {
   clearInterval(elapsedTimer);
   if (wakeLock) { wakeLock.release(); wakeLock = null; }
 
-  // Upload transcript to Supabase
+  // Upload transcript and correction stats to Supabase
   uploadTranscript();
+  uploadCorrectionStats();
 
   // UI
   recBtn.classList.remove('recording');
   recLabel.textContent = 'START';
-  pauseBtn.classList.add('hidden');
-  pauseBtn.textContent = 'Pause';
+  clearBtn.disabled = segments.length === 0;
   saveBtn.disabled = segments.length === 0;
   levelFill.style.width = '0%';
 }
 
-function togglePause() {
-  if (!recording) return;
+function clearTranscript() {
+  if (recording) return;
+  if (!confirm('Clear all transcription text? This cannot be undone.')) return;
 
-  if (paused) {
-    paused = false;
-    pauseBtn.textContent = 'Pause';
-    recBtn.classList.add('recording');
-    startRecorderCycle();
-  } else {
-    paused = true;
-    pauseBtn.textContent = 'Resume';
-    recBtn.classList.remove('recording');
-    if (recorder && recorder.state === 'recording') recorder.stop();
-  }
+  segments = [];
+  segId = 0;
+  sessionId = null;
+  elapsedSec = 0;
+  elapsedEl.textContent = '00:00';
+  feed.innerHTML = '';
+
+  // Clear persisted session
+  localStorage.removeItem('ccscribe_segments');
+  localStorage.removeItem('ccscribe_segId');
+  localStorage.removeItem('ccscribe_sessionId');
+  localStorage.removeItem('ccscribe_elapsedSec');
+
+  // UI
+  clearBtn.disabled = true;
+  saveBtn.disabled = true;
 }
 
 // ---------------------------------------------------------------------------
@@ -878,6 +925,46 @@ async function uploadTranscript() {
     console.warn('Transcript upload failed:', e);
   }
 }
+
+async function uploadCorrectionStats() {
+  if (!supabaseClient || !sessionId || correctionHits.size === 0) return;
+  try {
+    await supabaseClient.from('correction_stats').upsert({
+      session_id: sessionId,
+      stats: Object.fromEntries(correctionHits),
+    }, { onConflict: 'session_id' });
+    console.log(`Correction stats uploaded: ${correctionHits.size} terms`);
+  } catch (e) {
+    console.warn('Correction stats upload failed:', e);
+  }
+}
+
+window.glossaryStats = async function(top = 30) {
+  // Show current session stats
+  if (correctionHits.size > 0) {
+    const session = [...correctionHits.entries()].sort((a, b) => b[1] - a[1]);
+    console.log(`\n=== Current session: ${session.length} terms corrected ===`);
+    console.table(session.slice(0, top).map(([wrong, count]) => ({ wrong, count })));
+  }
+
+  // Show cumulative stats from Supabase
+  if (!supabaseClient) { console.log('Supabase not configured — showing session stats only'); return; }
+  try {
+    const { data, error } = await supabaseClient.from('correction_stats').select('stats');
+    if (error) throw error;
+    const totals = {};
+    for (const row of data) {
+      for (const [term, count] of Object.entries(row.stats)) {
+        totals[term] = (totals[term] || 0) + count;
+      }
+    }
+    const sorted = Object.entries(totals).sort((a, b) => b[1] - a[1]);
+    console.log(`\n=== All talks: ${data.length} sessions, ${sorted.length} unique terms ===`);
+    console.table(sorted.slice(0, top).map(([wrong, count]) => ({ wrong, count, sessions: data.filter(r => r.stats[wrong]).length })));
+  } catch (e) {
+    console.warn('Failed to fetch cumulative stats:', e);
+  }
+};
 
 // Audience mode: subscribe to a session's segments
 function enterAudienceMode(targetSessionId) {
@@ -1067,7 +1154,7 @@ recBtn.addEventListener('click', () => {
   if (recording) stopRecording(); else startRecording();
 });
 
-pauseBtn.addEventListener('click', togglePause);
+clearBtn.addEventListener('click', clearTranscript);
 shareBtn.addEventListener('click', shareSession);
 saveBtn.addEventListener('click', saveTranscript);
 settingsBtn.addEventListener('click', openSettings);
@@ -1095,6 +1182,7 @@ advancedToggle.addEventListener('click', () => {
 
 async function init() {
   loadSettings();
+  restoreSession();
   await loadGlossary();
   initSupabase();
 
