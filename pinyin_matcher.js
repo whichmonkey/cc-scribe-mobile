@@ -83,7 +83,7 @@
    */
   function maxEditDistance(syllableCount) {
     if (syllableCount <= 3) return 0;  // exact match only
-    if (syllableCount <= 7) return 1;
+    if (syllableCount <= 7) return 2;
     return 2;  // 8+ syllables
   }
 

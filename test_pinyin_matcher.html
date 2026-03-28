@@ -95,11 +95,13 @@ async function runTests() {
 
   // -- Levenshtein unit tests --
   print('\n== Levenshtein distance ==');
-  // Access internal via a quick test (we can test indirectly through matchVerses)
-  // 7-syllable with 1 edit should match (threshold = 1)
-  // 絕學無為閒道人 with one syllable changed
-  var oneOff = PinyinMatcher.matchVerses('绝学无为闲到人');  // 到=dao (same pinyin as 道)
-  assert('7-syllable 1-edit match', oneOff, '絕學無為閒道人');
+  // 绝学无为闲到人: all simplified homophones, edit distance = 0
+  var zeroEdit = PinyinMatcher.matchVerses('绝学无为闲到人');
+  assert('7-syllable 0-edit (simplified homophones)', zeroEdit, '絕學無為閒道人');
+
+  // 2-edit: 猪=zhu ≠ chu, 丢=diu ≠ qiu → 2 real pinyin edits
+  var twoEdit = PinyinMatcher.matchVerses('不猪妄想不丢真');
+  assert('7-syllable 2-edit match (threshold=2)', twoEdit, '不除妄想不求真');
 
   // -- Multiple verses in one segment --
   print('\n== Multiple verses in segment ==');
