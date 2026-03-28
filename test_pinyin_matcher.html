@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PinyinMatcher JS Tests</title>
+  <style>
+    body { font-family: monospace; margin: 2em; background: #1a1a1a; color: #eee; }
+    .pass { color: #4caf50; } .fail { color: #f44336; }
+    h2 { color: #90caf9; } pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>PinyinMatcher JS — Test Suite</h1>
+  <pre id="log"></pre>
+
+  <script src="lib/pinyin-pro.js"></script>
+  <script src="pinyin_matcher.js"></script>
+  <script>
+'use strict';
+
+const log = document.getElementById('log');
+let passed = 0, failed = 0;
+
+function print(msg) { log.textContent += msg + '\n'; }
+function assert(label, actual, expected) {
+  if (actual === expected) {
+    print('  PASS: ' + label);
+    passed++;
+  } else {
+    print('  FAIL: ' + label);
+    print('    expected: ' + JSON.stringify(expected));
+    print('    actual:   ' + JSON.stringify(actual));
+    failed++;
+  }
+}
+
+// Inline a small set of test verses (subset of zhengdaoge_subverses.json)
+const TEST_VERSES = [
+  {"zh": "君不見", "en": "Have you not seen?"},
+  {"zh": "絕學無為閒道人", "en": "The idle sage..."},
+  {"zh": "不除妄想不求真", "en": "Who neither removes delusions..."},
+  {"zh": "無明實性即佛��", "en": "The real nature of ignorance..."},
+  {"zh": "幻化空身即法身", "en": "The illusory empty body..."},
+  {"zh": "法身覺了無一物", "en": "When the Dharma body awakens..."},
+  {"zh": "本源自性天真佛", "en": "The original source..."},
+  {"zh": "五陰浮雲空去來", "en": "The five aggregates..."},
+  {"zh": "三毒水泡虛出沒", "en": "The three poisons..."}
+];
+
+async function runTests() {
+  // Mock fetch to serve inline verses
+  const origFetch = window.fetch;
+  window.fetch = async function(url) {
+    if (url.includes('test_verses')) {
+      return { ok: true, json: async () => TEST_VERSES };
+    }
+    return origFetch.apply(this, arguments);
+  };
+
+  await PinyinMatcher.init('test_verses.json');
+  window.fetch = origFetch;
+
+  // -- Readiness --
+  print('\n== Readiness ==');
+  assert('isReady after init', PinyinMatcher.isReady(), true);
+
+  // -- Exact classical unchanged --
+  print('\n== Exact classical unchanged ==');
+  assert('correct text passes through',
+    PinyinMatcher.matchVerses('絕學無為閒道人'),
+    '絕學無為閒道人');
+
+  // -- Full garble replaced --
+  print('\n== Full garble replaced ==');
+  // Simplified homophones for 絕學無為閒道人
+  var result = PinyinMatcher.matchVerses('绝学无为闲道人');
+  assert('simplified homophones → correct traditional', result, '絕學無為閒道人');
+
+  // -- No match for unrelated modern speech --
+  print('\n== Unrelated modern speech ==');
+  assert('modern text unchanged',
+    PinyinMatcher.matchVerses('今天天气很好'),
+    '今天天气很好');
+
+  // -- Empty / short input --
+  print('\n== Edge cases ==');
+  assert('empty string', PinyinMatcher.matchVerses(''), '');
+  assert('single char', PinyinMatcher.matchVerses('好'), '好');
+
+  // -- Short verse (3 syllables, exact only) --
+  print('\n== Short verse — exact match only (3 syllables) ==');
+  assert('exact 3-syllable match',
+    PinyinMatcher.matchVerses('军不见'),  // exact pinyin match
+    '君不見');
+
+  // -- Levenshtein unit tests --
+  print('\n== Levenshtein distance ==');
+  // Access internal via a quick test (we can test indirectly through matchVerses)
+  // 7-syllable with 1 edit should match (threshold = 1)
+  // 絕學無為閒道人 with one syllable changed
+  var oneOff = PinyinMatcher.matchVerses('绝学无为闲到人');  // 到=dao (same pinyin as 道)
+  assert('7-syllable 1-edit match', oneOff, '絕學無為閒道人');
+
+  // -- Multiple verses in one segment --
+  print('\n== Multiple verses in segment ==');
+  var multi = PinyinMatcher.matchVerses('绝学无为闲道人不除妄想不求真');
+  assert('two consecutive verses corrected', multi, '絕學無為閒道人不除妄想不求真');
+
+  // -- Performance benchmark --
+  print('\n== Performance ==');
+  var input = '绝学无为闲道人不除妄想不求真';
+  var t0 = performance.now();
+  var iters = 100;
+  for (var i = 0; i < iters; i++) {
+    PinyinMatcher.matchVerses(input);
+  }
+  var avg = (performance.now() - t0) / iters;
+  var perfOk = avg < 10;
+  print('  Average: ' + avg.toFixed(2) + 'ms per call (' + iters + ' iters)');
+  assert('under 10ms per segment', perfOk, true);
+
+  // -- Summary --
+  print('\n========================================');
+  print('  ' + passed + ' passed, ' + failed + ' failed');
+  print('========================================');
+}
+
+runTests().catch(e => print('ERROR: ' + e.message + '\n' + e.stack));
+  </script>
+</body>
+</html>

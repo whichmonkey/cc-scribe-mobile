@@ -32309,13 +32309,6 @@
     "type": "homophone"
   },
   {
-    "zh": "謝謝大家",
-    "en": "",
-    "pl": "",
-    "notes": "Whisper hallucination — generic pleasantry; maps to empty string",
-    "type": "homophone"
-  },
-  {
     "zh": "感謝您",
     "en": "",
     "pl": "",
@@ -34406,6 +34399,3387 @@
     "en": "",
     "pl": "",
     "notes": "Homophone alias — Whisper mishears 念念煩惱 as 捏捏煩惱; moment-to-moment afflictions",
+    "type": "homophone"
+  },
+  {
+    "zh": "詠家大師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉大師 as 詠家大師; 永嘉證道歌 lecture; Whisper consistently writes 詠家 for 永嘉",
+    "type": "homophone"
+  },
+  {
+    "zh": "勇家大師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉大師 as 勇家大師; 永嘉證道歌 lecture; common Whisper variant",
+    "type": "homophone"
+  },
+  {
+    "zh": "勇佳大師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉大師 as 勇佳大師; 永嘉證道歌 lecture",
+    "type": "homophone"
+  },
+  {
+    "zh": "用家大師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉大師 as 用家大師; 永嘉證道歌 lecture",
+    "type": "homophone"
+  },
+  {
+    "zh": "勇家大使",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉大師 as 勇家大使; 永嘉證道歌 lecture; 大使 for 大師",
+    "type": "homophone"
+  },
+  {
+    "zh": "永江",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉 as 永江; 永嘉證道歌 lecture; Whisper drops 嘉→江",
+    "type": "homophone"
+  },
+  {
+    "zh": "用家大事",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 永嘉大師 as 用家大事; 永嘉證道歌 lecture",
+    "type": "homophone"
+  },
+  {
+    "zh": "正道哥",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 正道哥; 永嘉證道歌 lecture; 證→正, 歌→哥",
+    "type": "homophone"
+  },
+  {
+    "zh": "正道個",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 正道個; 永嘉證道歌 lecture; 歌→個",
+    "type": "homophone"
+  },
+  {
+    "zh": "正道歌",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 正道歌; 永嘉證道歌 lecture; 證→正",
+    "type": "homophone"
+  },
+  {
+    "zh": "正道戈",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 正道戈; 永嘉證道歌 lecture; 歌→戈",
+    "type": "homophone"
+  },
+  {
+    "zh": "鄭大哥",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 鄭大哥; 永嘉證道歌 lecture; radical mishearing",
+    "type": "homophone"
+  },
+  {
+    "zh": "六族",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六祖 as 六族; 永嘉證道歌 lecture; 祖→族",
+    "type": "homophone"
+  },
+  {
+    "zh": "六指路",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六祖 as 六指路; 永嘉證道歌 lecture; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "六周大師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六祖大師 as 六周大師; 永嘉證道歌 lecture; 祖→周",
+    "type": "homophone"
+  },
+  {
+    "zh": "六軸",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六祖 as 六軸; 永嘉證道歌 lecture; 祖→軸",
+    "type": "homophone"
+  },
+  {
+    "zh": "無聲",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無生 as 無聲; phrase-level because 無聲 (silence) is common; in 永嘉證道歌 context means 無生 (unborn/non-arising)",
+    "type": "homophone"
+  },
+  {
+    "zh": "包丁解牛",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 庖丁解牛 as 包丁解牛; Zhuangzi story; 庖→包",
+    "type": "homophone"
+  },
+  {
+    "zh": "孔夫之",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 孔夫子 as 孔夫之; Confucius; 子→之",
+    "type": "homophone"
+  },
+  {
+    "zh": "農產寺",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農產寺; 聖嚴法師 Nung Chan Monastery; 禪→產",
+    "type": "homophone"
+  },
+  {
+    "zh": "農產市",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農產市; 聖嚴法師 Nung Chan Monastery; 禪寺→產市",
+    "type": "homophone"
+  },
+  {
+    "zh": "農場市",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農場市; 聖嚴法師 Nung Chan Monastery; 禪寺→場市",
+    "type": "homophone"
+  },
+  {
+    "zh": "農場寺",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農場寺; 聖嚴法師 Nung Chan Monastery; 禪→場",
+    "type": "homophone"
+  },
+  {
+    "zh": "農參是",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農參是; 聖嚴法師 Nung Chan Monastery; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "農餐室",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農餐室; 聖嚴法師 Nung Chan Monastery; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "藝術繳",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 一宿覺 as 藝術繳; 永嘉玄覺 nickname after one night with 六祖; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "白巨翼",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 白居易 as 白巨翼; 唐代詩人; 永嘉證道歌 lecture context discussing 長恨歌",
+    "type": "homophone"
+  },
+  {
+    "zh": "白樓天",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 白樂天 as 白樓天; 白居易字樂天; 永嘉證道歌 lecture",
+    "type": "homophone"
+  },
+  {
+    "zh": "三歌",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 山歌 as 三歌; phrase-level because 三歌 could be valid; in context of 打柴的人會唱山歌",
+    "type": "homophone"
+  },
+  {
+    "zh": "六祖徽南",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六祖惠能 as 六祖徽南; 永嘉證道歌 lecture; 惠能→徽南",
+    "type": "homophone"
+  },
+  {
+    "zh": "子官",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 止觀 as 子官; 天台止觀; 永嘉證道歌 lecture context",
+    "type": "homophone"
+  },
+  {
+    "zh": "胃魚",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 威儀 as 胃魚; monastic deportment; 永嘉證道歌 lecture",
+    "type": "homophone"
+  },
+  {
+    "zh": "韓韓",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 行行 as 韓韓; phrase-level; in context of 三百六十行行行出狀元",
+    "type": "homophone"
+  },
+  {
+    "zh": "聖言",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 聖嚴 as 聖言; 聖嚴法師 name; Whisper drops 嚴→言",
+    "type": "homophone"
+  },
+  {
+    "zh": "寬而知之",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 困而知之 as 寬而知之; Confucius quote; 困→寬",
+    "type": "homophone"
+  },
+  {
+    "zh": "鄭道哥",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 鄭道哥; 永嘉證道歌 lecture; 證→鄭, 歌→哥",
+    "type": "homophone"
+  },
+  {
+    "zh": "寒山大使",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 寒山大士 as 寒山大使; 唐代高僧寒山; 大士→大使",
+    "type": "homophone"
+  },
+  {
+    "zh": "聲岩",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 聖嚴 as 聲岩; 聖嚴法師 name; 嚴→岩",
+    "type": "homophone"
+  },
+  {
+    "zh": "殘訊斑",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 禪修班 as 殘訊斑; meditation class; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "臣佛",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 成佛 as 臣佛; attaining Buddhahood; 成→臣",
+    "type": "homophone"
+  },
+  {
+    "zh": "無門",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無明 as 無門; phrase-level because 無門 (gateless) is valid Buddhist term; in context of 無明的根本 means ignorance (avidya)",
+    "type": "homophone"
+  },
+  {
+    "zh": "Tadiang",
+    "en": "",
+    "pl": "",
+    "notes": "Hallucination — hallucination — foreign word in dharma talk",
+    "type": "homophone"
+  },
+  {
+    "zh": "數が",
+    "en": "",
+    "pl": "",
+    "notes": "Hallucination — hallucination — Japanese character leak",
+    "type": "homophone"
+  },
+  {
+    "zh": "君不見",
+    "en": "Have you not seen?",
+    "pl": "Czyż nie widziałeś?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "絕學無為閒道人",
+    "en": "The idle sage of non-doing who has ceased all learning,",
+    "pl": "Bezczynnego mędrca niedzia­łania, który porzucił wszelką naukę,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不除妄想不求真",
+    "en": "Who neither removes delusions nor seeks truth?",
+    "pl": "Który ani nie usuwa złudzeń, ani nie szuka prawdy?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "無明實性即佛性",
+    "en": "The real nature of ignorance is Buddha-nature itself,",
+    "pl": "Prawdziwa natura niewiedzy jest samą naturą Buddy,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "幻化空身即法身",
+    "en": "The illusory, empty body is the Dharma body.",
+    "pl": "Iluzoryczne, puste ciało jest ciałem Dharmy.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "法身覺了無一物",
+    "en": "When the Dharma body awakens, not a single thing exists,",
+    "pl": "Gdy ciało Dharmy się przebudzi, nie istnieje ani jedna rzecz,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "本源自性天真佛",
+    "en": "The original source, self-nature, is the natural Buddha.",
+    "pl": "Pierwotne źródło, własna natura, jest naturalnym Buddą.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "五陰浮雲空去來",
+    "en": "The five aggregates are drifting clouds that come and go in emptiness,",
+    "pl": "Pięć skupisk to dryfujące chmury, które przychodzą i odchodzą w pustce,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "三毒水泡虛出沒",
+    "en": "The three poisons are water bubbles that falsely arise and cease.",
+    "pl": "Trzy trucizny to bąbelki wody, które fałszywie powstają i zanikają.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "證實相無人法",
+    "en": "Realizing true suchness, there is neither self nor dharmas,",
+    "pl": "Urzeczywistniając prawdziwą takość, nie ma ani jaźni, ani dharm,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "剎那滅却阿鼻業",
+    "en": "In an instant, the karma of Avici Hell is destroyed.",
+    "pl": "W mgnieniu oka karma piekła Avici zostaje zniszczona.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "若將妄語誑眾生",
+    "en": "If I deceive beings with false words,",
+    "pl": "Jeśli zwodzę istoty fałszywymi słowami,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "自招拔舌塵沙劫",
+    "en": "I invite having my tongue pulled out for eons countless as sand.",
+    "pl": "Ściągam na siebie wyrwanie języka przez eony niezliczone jak piasek.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "頓覺了如來禪",
+    "en": "Suddenly awakening to the Tathagata's Chan,",
+    "pl": "Nagle przebudzając się do Chan Tathagaty,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "六度萬行體中圓",
+    "en": "The six paramitas and myriad practices are complete within essence.",
+    "pl": "Sześć paramit i niezliczone praktyki są kompletne w esencji.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "夢裏明明有六趣",
+    "en": "In dreams there clearly are six realms of existence,",
+    "pl": "We śnie wyraźnie istnieje sześć sfer istnienia,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "覺後空空無大千",
+    "en": "After awakening, empty emptiness—no great thousand worlds.",
+    "pl": "Po przebudzeniu pusta pustka — żadnych wielkich tysięcy światów.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "無罪福無損益",
+    "en": "No sin or merit, no loss or gain,",
+    "pl": "Ani grzechu, ani zasługi, ani straty, ani zysku,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "寂滅性中莫問覓",
+    "en": "In the nature of quiescent extinction, do not seek or search.",
+    "pl": "W naturze cichego wygaśnięcia nie szukaj ani nie poszukuj.",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "比來塵鏡未曾磨",
+    "en": "The dusty mirror has never been polished until now,",
+    "pl": "Zakurzone lustro nigdy dotąd nie było polerowane,",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "今日分明須剖析",
+    "en": "Today I must analyze this clearly",
+    "pl": "Dziś muszę to jasno przeanalizować",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "誰無念誰無生",
+    "en": "Who is without thought, who is without birth?",
+    "pl": "Kto jest bez myśli, kto jest bez narodzin?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "若實無生無不生",
+    "en": "If truly unborn, nothing is not born",
+    "pl": "Jeśli prawdziwie nienarodzone, nic nie jest nienarodzone",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "喚取機關木人問",
+    "en": "Call forth the wooden puppet and ask",
+    "pl": "Przywołaj drewnianą marionetkę i zapytaj",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "求佛施功早晚成",
+    "en": "Seeking Buddha through effort—when will it be achieved?",
+    "pl": "Szukając Buddy przez wysiłek—kiedy to osiągniesz?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "放四大莫把捉",
+    "en": "Release the four elements, don't grasp them",
+    "pl": "Uwolnij cztery elementy, nie chwytaj ich",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "寂滅性中隨飲啄",
+    "en": "In the nature of extinction, freely eat and drink",
+    "pl": "W naturze wygaszenia, swobodnie jedz i pij",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "諸行無常一切空",
+    "en": "All formations are impermanent, everything is empty",
+    "pl": "Wszystkie formacje są nietrwałe, wszystko jest puste",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "即是如來大圓覺",
+    "en": "This is the Tathagata's great perfect enlightenment",
+    "pl": "To jest wielkie doskonałe oświecenie Tathagaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "決定說表真僧",
+    "en": "Decisive words reveal the true sangha",
+    "pl": "Zdecydowane słowa ujawniają prawdziwą sanghę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "有人不肯任情徵",
+    "en": "Some refuse and question willfully",
+    "pl": "Niektórzy odmawiają i kwestionują umyślnie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "直截根源佛所印",
+    "en": "Directly cutting to the root, sealed by Buddha",
+    "pl": "Bezpośrednio tnąc do korzenia, opieczętowane przez Buddę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "摘葉尋枝我不能",
+    "en": "Plucking leaves and searching branches—I cannot",
+    "pl": "Zrywając liście i szukając gałęzi—nie mogę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "摩尼珠人不識",
+    "en": "The mani pearl—people don't recognize it",
+    "pl": "Perła mani—ludzie jej nie rozpoznają",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "如來藏裏親收得",
+    "en": "Within the Tathagatagarbha, personally received",
+    "pl": "W Tathagatagarbha, osobiście otrzymana",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "六般神用空不空",
+    "en": "Six supernatural powers, empty yet not empty",
+    "pl": "Sześć nadnaturalnych mocy, puste lecz nie puste",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一顆圓光色非色",
+    "en": "One perfect light, form that is not form",
+    "pl": "Jedno doskonałe światło, forma która nie jest formą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "淨五眼得五力",
+    "en": "Purifying the five eyes, gaining the five powers",
+    "pl": "Oczyszczając pięć oczu, zyskując pięć mocy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "唯證乃知難可測",
+    "en": "Only through realization can one know—hard to fathom",
+    "pl": "Tylko przez realizację można poznać—trudne do zgłębienia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "鏡裏看形見不難",
+    "en": "Seeing form in a mirror is not difficult",
+    "pl": "Widzenie formy w lustrze nie jest trudne",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "水中捉月爭拈得",
+    "en": "Who can grasp the moon reflected in water?",
+    "pl": "Kto może schwytać księżyc odbity w wodzie?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "常獨行常獨步",
+    "en": "Always walking alone, always stepping alone",
+    "pl": "Zawsze idąc samotnie, zawsze krocząc samotnie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "達者同遊涅槃路",
+    "en": "Realized ones journey together on nirvana's path",
+    "pl": "Oświeceni wędrują razem ścieżką nirwany",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "調古神清風自高",
+    "en": "Ancient melody, pure spirit, wind naturally lofty",
+    "pl": "Starożytna melodia, czysty duch, wiatr naturalnie wzniosły",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "貌顇骨剛人不顧",
+    "en": "Haggard face, unbending bones—people pay no heed",
+    "pl": "Wynędzniała twarz, nieugięte kości—ludzie nie zwracają uwagi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "窮釋子口稱貧",
+    "en": "Poor monk's mouth claims poverty",
+    "pl": "Usta biednego mnicha głoszą ubóstwo",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "實是身貧道不貧",
+    "en": "Truly the body is poor, but not the Way",
+    "pl": "Prawdziwie ciało jest biedne, lecz nie Droga",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "貧則身常披縷褐",
+    "en": "In poverty the body always wears tattered robes",
+    "pl": "W ubóstwie ciało zawsze nosi podarte szaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "道則心藏無價珍",
+    "en": "In the Way the heart treasures priceless jewels",
+    "pl": "W Drodze serce skrywa bezcenne klejnoty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "無價珍用無盡",
+    "en": "Priceless jewels, inexhaustible in use",
+    "pl": "Bezcenne klejnoty, niewyczerpane w użyciu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "利物應機終不悋",
+    "en": "Benefiting beings, responding to conditions, never stingy",
+    "pl": "Pomagając istotom, odpowiadając na warunki, nigdy skąpy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "三身四智體中圓",
+    "en": "Three bodies, four wisdoms complete within the essence",
+    "pl": "Trzy ciała, cztery mądrości kompletne w istocie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "八解六通心地印",
+    "en": "Eight liberations, six powers seal the ground of mind",
+    "pl": "Osiem wyzwoleń, sześć mocy pieczętuje grunt umysłu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "上士一決一切了",
+    "en": "Superior beings resolve all with one decision",
+    "pl": "Wyższe istoty rozwiązują wszystko jedną decyzją",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "中下多聞多不信",
+    "en": "Middling and inferior hear much but believe little",
+    "pl": "Średni i niżsi wiele słyszą, lecz mało wierzą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "但自懷中解垢衣",
+    "en": "Just remove the stained clothes from within",
+    "pl": "Po prostu usuń poplamione szaty z wnętrza",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "誰能向外誇精進",
+    "en": "Who can boast of diligence to others?",
+    "pl": "Kto może chwalić się pilnością przed innymi?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "從他謗任他非",
+    "en": "Let them slander, let them condemn",
+    "pl": "Niech oczerniają, niech potępiają",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "把火燒天徒自疲",
+    "en": "Like trying to burn heaven with fire—futile exhaustion",
+    "pl": "Jak próba spalenia nieba ogniem—daremne wyczerpanie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "我聞恰似飲甘露",
+    "en": "When I hear it, it's just like drinking sweet nectar",
+    "pl": "Gdy to słyszę, jest jak picie słodkiego nektaru",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "銷融頓入不思議",
+    "en": "Melting away, suddenly entering the inconceivable",
+    "pl": "Rozpływając się, nagle wkraczam w niewyobrażalne",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "觀惡言是功德",
+    "en": "Viewing harsh words as merit",
+    "pl": "Postrzegając ostre słowa jako zasługę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "此即成吾善知識",
+    "en": "These become my good spiritual friends",
+    "pl": "Te stają się moimi dobrymi duchowymi przyjaciółmi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不因訕謗起冤親",
+    "en": "Not arousing enmity or affection through slander",
+    "pl": "Nie wzbudzając wrogości ani przywiązania przez oszczerstwa",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "何表無生慈忍力",
+    "en": "How else to manifest the power of birthless compassion and patience?",
+    "pl": "Jak inaczej objawić moc nienarodzonego współczucia i cierpliwości?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "宗亦通說亦通",
+    "en": "The essence penetrates, the teachings penetrate",
+    "pl": "Istota przenika, nauki przenikają",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "定慧圓明不滯空",
+    "en": "Concentration and wisdom perfectly bright, not stuck in emptiness",
+    "pl": "Skupienie i mądrość doskonale jasne, nie utkwione w pustce",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "非但我今獨達了",
+    "en": "Not only I alone now realize this",
+    "pl": "Nie tylko ja sam teraz to realizuję",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "恒沙諸佛體皆同",
+    "en": "Buddhas countless as Ganges sands all share the same essence",
+    "pl": "Buddowie niezliczeni jak piaski Gangesu wszyscy dzielą tę samą istotę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "師子吼無畏說",
+    "en": "The lion's roar, fearless teaching",
+    "pl": "Lwie ryczenie, nieustraszone nauczanie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "百獸聞之皆腦裂",
+    "en": "All beasts hearing it, their brains split apart",
+    "pl": "Wszystkie zwierzęta słysząc to, ich mózgi pękają",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "香象奔波失却威",
+    "en": "The fragrant elephant flees in panic, losing its majesty",
+    "pl": "Pachnący słoń ucieka w panice, tracąc swój majestat",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "天龍寂聽生欣悅",
+    "en": "Heavenly dragons listen quietly, arising in joy",
+    "pl": "Niebiańskie smoki słuchają cicho, powstając w radości",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "遊江海涉山川",
+    "en": "Traveling rivers and seas, crossing mountains and streams",
+    "pl": "Podróżując rzekami i morzami, przekraczając góry i strumienie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "尋師訪道為參禪",
+    "en": "Seeking masters, visiting the Way, to practice Chan",
+    "pl": "Szukając mistrzów, odwiedzając Drogę, by praktykować Chan",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "自從認得曹谿路",
+    "en": "Since recognizing the road to Caoxi",
+    "pl": "Od kiedy rozpoznałem drogę do Caoxi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "了知生死不相關",
+    "en": "I understand birth and death are unrelated",
+    "pl": "Rozumiem, że narodziny i śmierć są niepowiązane",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "行亦禪坐亦禪",
+    "en": "Walking is Chan, sitting is Chan",
+    "pl": "Chodzenie jest Chan, siedzenie jest Chan",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "語默動靜體安然",
+    "en": "Speaking or silent, moving or still, the essence is at peace",
+    "pl": "Mówiąc czy milcząc, ruszając się czy będąc w bezruchu, istota jest w spokoju",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "縱遇鋒刀常坦坦",
+    "en": "Even facing sharp blades, always serene",
+    "pl": "Nawet w obliczu ostrych ostrzy, zawsze pogodny",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "假饒毒藥也閒閒",
+    "en": "Even if given deadly poison, I remain at ease",
+    "pl": "Nawet gdyby mi dano śmiertelną truciznę, pozostaję spokojny",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "我師得見然燈佛",
+    "en": "My teacher once met Dipankara Buddha",
+    "pl": "Mój nauczyciel spotkał kiedyś Buddę Dipankarę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "多劫曾為忍辱仙",
+    "en": "Through many kalpas I practiced as the patient sage",
+    "pl": "Przez wiele kalp praktykowałem jako cierpliwy mędrzec",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "幾迴生幾迴死",
+    "en": "How many times born, how many times died",
+    "pl": "Ile razy narodzony, ile razy zmarły",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "生死悠悠無定止",
+    "en": "Birth and death drift on without fixed end",
+    "pl": "Narodziny i śmierć dryfują bez stałego końca",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "自從頓悟了無生",
+    "en": "Since sudden awakening to the unborn",
+    "pl": "Od nagłego przebudzenia do nienarodzonego",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "於諸榮辱何憂喜",
+    "en": "What worry or joy in honor or disgrace?",
+    "pl": "Cóż za troska czy radość w czci lub hańbie?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "入深山住蘭若",
+    "en": "Entering deep mountains, dwelling in hermitages",
+    "pl": "Wchodząc w głębokie góry, mieszkając w pustelniach",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "岑崟幽邃長松下",
+    "en": "Steep and secluded beneath tall pines",
+    "pl": "Strome i ustronnie pod wysokimi sosnami",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "優游靜坐野僧家",
+    "en": "Leisurely sitting still in this wild monk's home",
+    "pl": "Spokojnie siedzę w domu dzikiego mnicha",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "閴寂安居實蕭灑",
+    "en": "Serene and tranquil dwelling, truly carefree",
+    "pl": "Ciche i spokojne mieszkanie, prawdziwie beztroskie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "覺即了不施功",
+    "en": "Awakened, complete without applying effort",
+    "pl": "Przebudzony, kompletny bez wysiłku",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一切有為法不同",
+    "en": "Unlike all conditioned dharmas",
+    "pl": "Niepodobny do wszystkich uwarunkowanych dharm",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "住相布施生天福",
+    "en": "Giving with attachment births heavenly merit",
+    "pl": "Dawanie z przywiązaniem rodzi niebiańskie zasługi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "猶如仰箭射虛空",
+    "en": "Like shooting arrows straight up at empty sky",
+    "pl": "Jak strzelanie strzał prosto w puste niebo",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "勢力盡箭還墜",
+    "en": "When force is spent, the arrow falls back down",
+    "pl": "Gdy siła się wyczerpie, strzała spada z powrotem",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "招得來生不如意",
+    "en": "Bringing unsatisfactory future lives",
+    "pl": "Przynosząc niezadowalające przyszłe żywoty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "爭似無為實相門",
+    "en": "How can it compare to the unconditioned gate of true suchness?",
+    "pl": "Jak może się równać z nieuwarunkowaną bramą prawdziwej takości?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一超直入如來地",
+    "en": "One leap directly enters the Tathagata's ground",
+    "pl": "Jeden skok wprost wchodzi na grunt Tathagaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "但得本莫愁末",
+    "en": "Just attain the root, don't worry about branches",
+    "pl": "Tylko osiągnij korzeń, nie martw się o gałęzie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "如淨瑠璃含寶月",
+    "en": "Like pure lapis lazuli containing a jeweled moon",
+    "pl": "Jak czysty lazuryt zawierający klejnotny księżyc",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "既能解此如意珠",
+    "en": "Having grasped this wish-fulfilling pearl",
+    "pl": "Pojąwszy tę perłę spełniającą życzenia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "自利利他終不竭",
+    "en": "Benefiting self and others never exhausted",
+    "pl": "Dobro własne i innych nigdy nie wyczerpane",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "江月照松風吹",
+    "en": "River moon shines, pine wind blows",
+    "pl": "Rzeczny księżyc świeci, sosnowy wiatr wieje",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "永夜清宵何所為",
+    "en": "In the eternal night's clear dawn, what is there to do?",
+    "pl": "W wiecznej nocy jasnym świcie, co jest do zrobienia?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "佛性戒珠心地印",
+    "en": "Buddha-nature's precept pearl, mind-ground seal",
+    "pl": "Perła wskazań natury Buddy, pieczęć gruntu umysłu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "霧露雲霞體上衣",
+    "en": "Mist, dew, clouds and rosy clouds are the body's robe",
+    "pl": "Mgła, rosa, chmury i zorze są szatą ciała",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "降龍鉢解虎錫",
+    "en": "Dragon-subduing bowl, tiger-taming staff",
+    "pl": "Miska ujarzmiająca smoki, laska oswajająca tygrysy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "兩鈷金環鳴歷歷",
+    "en": "Two-pronged golden rings ringing clearly",
+    "pl": "Dwuzębne złote pierścienie dzwonią wyraźnie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不是標形虛事持",
+    "en": "Not just displaying forms or holding empty things",
+    "pl": "Nie tylko pokazywanie form czy trzymanie pustych rzeczy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "如來寶杖親蹤跡",
+    "en": "The Tathagata's precious staff, personally traced",
+    "pl": "Cenna laska Tathagaty, osobiście śledzona",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不求真不斷妄",
+    "en": "Not seeking truth, not cutting off delusion",
+    "pl": "Nie szukając prawdy, nie odcinając złudzeń",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "了知二法空無相",
+    "en": "Clearly knowing both dharmas are empty without characteristics",
+    "pl": "Jasno wiedząc, że obie dharmy są puste bez cech",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "無相無空無不空",
+    "en": "No characteristics, no emptiness, no non-emptiness",
+    "pl": "Bez cech, bez pustki, bez nie-pustki",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "即是如來真實相",
+    "en": "This is the Tathagata's true characteristic",
+    "pl": "To jest prawdziwa cecha Tathagaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "心鏡明鑒無礙",
+    "en": "Mind-mirror bright, reflecting without obstruction",
+    "pl": "Lustro umysłu jasne, odbijające bez przeszkód",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "廓然瑩徹周沙界",
+    "en": "Vastly clear and penetrating throughout sand-realm worlds",
+    "pl": "Rozlegle czyste i przenikające światy ziaren piasku",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "萬象森羅影現中",
+    "en": "Myriad forms in dense array appear within",
+    "pl": "Niezliczone formy w gęstym szyku pojawiają się wewnątrz",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一顆圓光非內外",
+    "en": "One perfect light, neither inside nor outside",
+    "pl": "Jedno doskonałe światło, ani wewnątrz ani na zewnątrz",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "豁達空撥因果",
+    "en": "Nihilistic emptiness rejects cause and effect",
+    "pl": "Nihilistyczna pustka odrzuca przyczynę i skutek",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "莽莽蕩蕩招殃禍",
+    "en": "Reckless and unrestrained, inviting calamity and disaster",
+    "pl": "Lekkomyślny i niepohamowany, sprowadzasz nieszczęście",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "棄有著空病亦然",
+    "en": "Rejecting existence and clinging to emptiness—the illness is the same",
+    "pl": "Odrzucając istnienie i chwytając pustkę—choroba ta sama",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "還如避溺而投火",
+    "en": "Like fleeing drowning only to leap into fire",
+    "pl": "Jak uciekając przed utonięciem, skaczemy w ogień",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "捨妄心取真理",
+    "en": "Abandoning the deluded mind to grasp true principle",
+    "pl": "Porzucając złudzony umysł, by pochwycić prawdziwą zasadę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "取捨之心成巧偽",
+    "en": "The mind of grasping and rejecting becomes clever falseness",
+    "pl": "Umysł chwytania i odrzucania staje się sprytnym fałszem",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "學人不了用修行",
+    "en": "Students who don't understand rely on practice",
+    "pl": "Uczniowie, którzy nie rozumieją, polegają na praktyce",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "深成認賊將為子",
+    "en": "Deeply mistaking the thief for one's own child",
+    "pl": "Głęboko myląc złodzieja z własnym dzieckiem",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "損法財滅功德",
+    "en": "Destroying Dharma wealth, extinguishing merit and virtue",
+    "pl": "Niszcząc bogactwo Dharmy, gasząc zasługi i cnotę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "莫不由斯心意識",
+    "en": "All of this comes from mind, thought, and consciousness",
+    "pl": "Wszystko to pochodzi z umysłu, myśli i świadomości",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "是以禪門了却心",
+    "en": "Thus the Chan school resolves the mind",
+    "pl": "Dlatego szkoła Chan rozwiązuje umysł",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "頓入無生知見力",
+    "en": "Suddenly entering the power of unborn wisdom and vision",
+    "pl": "Nagle wchodząc w moc nienarodzonej mądrości i widzenia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "大丈夫秉慧劍",
+    "en": "The great man wields the wisdom sword",
+    "pl": "Wielki człowiek dzierży miecz mądrości",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "般若鋒兮金剛焰",
+    "en": "Prajna's blade, diamond flames",
+    "pl": "Ostrze prajni, diamentowe płomienie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "非但空摧外道心",
+    "en": "Not only crushing the hearts of heretics",
+    "pl": "Nie tylko krusząc serca heretyków",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "早曾落却天魔膽",
+    "en": "Long ago terrifying the demon kings",
+    "pl": "Dawno temu przerażając demonicznych królów",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "震法靁擊法鼓",
+    "en": "Thunder of Dharma strikes, drums of Dharma beat",
+    "pl": "Grom Dharmy uderza, bębny Dharmy biją",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "布慈雲兮灑甘露",
+    "en": "Spreading clouds of compassion, sprinkling sweet dew",
+    "pl": "Rozpościerając chmury współczucia, kropiąc słodką rosą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "龍象蹴踏潤無邊",
+    "en": "Dragon elephants trample, moistening without limit",
+    "pl": "Smocze słonie depczą, nawilżając bez granic",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "三乘五性皆醒悟",
+    "en": "Three vehicles and five natures all awaken",
+    "pl": "Trzy pojazdy i pięć natur—wszystkie się budzą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "雪山肥膩更無雜",
+    "en": "Snow Mountain's rich cream, pure without mixture",
+    "pl": "Bogaty krem Śnieżnej Góry, czysty bez domieszek",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "純出醍醐我常納",
+    "en": "Pure ghee alone I always consume",
+    "pl": "Czyste ghee zawsze spożywam",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一性圓通一切性",
+    "en": "One nature perfectly pervades all natures",
+    "pl": "Jedna natura przenika wszystkie natury",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一法遍含一切法",
+    "en": "One dharma encompasses all dharmas",
+    "pl": "Jedna dharma obejmuje wszystkie dharmy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一月普現一切水",
+    "en": "One moon appears in all waters",
+    "pl": "Jeden księżyc pojawia się we wszystkich wodach",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一切水月一月攝",
+    "en": "All water-moons are gathered in one moon",
+    "pl": "Wszystkie odbicia księżyca zbierają się w jednym księżycu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "諸佛法身入我性",
+    "en": "All Buddhas' Dharma bodies enter my nature",
+    "pl": "Ciała Dharmy wszystkich Buddów wchodzą w moją naturę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "我性同共如來合",
+    "en": "My nature merges as one with the Tathagata",
+    "pl": "Moja natura jednoczy się z Tathagatą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一地具足一切地",
+    "en": "One stage contains all stages complete",
+    "pl": "Jeden stopień zawiera wszystkie stopnie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "非色非心非行業",
+    "en": "Neither form nor mind nor karmic action",
+    "pl": "Ani forma, ani umysł, ani karmiczne działanie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "彈指圓成八萬門",
+    "en": "In a finger-snap, eighty thousand gates perfect",
+    "pl": "W pstryknięciu palcami osiemdziesiąt tysięcy bram się spełnia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "剎那滅却三祇劫",
+    "en": "In an instant, three asamkhya kalpas vanish",
+    "pl": "W mgnieniu trzy asamkhya kalpy znikają",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一切數句非數句",
+    "en": "All numerical and non-numerical phrases",
+    "pl": "Wszystkie liczbowe i nieliczbowe wyrażenia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "與吾靈覺何交涉",
+    "en": "What connection with my spiritual awareness?",
+    "pl": "Jaki związek z moją duchową świadomością?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不可毀不可讚",
+    "en": "Cannot be destroyed, cannot be praised",
+    "pl": "Nie można zniszczyć, nie można wychwalać",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "體若虛空勿涯岸",
+    "en": "Its essence like empty space without shores",
+    "pl": "Jej istota jak pusta przestrzeń bez brzegów",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不離當處常湛然",
+    "en": "Not leaving this very place, always clear",
+    "pl": "Nie opuszczając tego miejsca, zawsze jasna",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "覓即知君不可見",
+    "en": "Seek it and know you cannot see it",
+    "pl": "Szukaj, a poznasz, że nie możesz jej ujrzeć",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "取不得捨不得",
+    "en": "Cannot grasp it, cannot abandon it",
+    "pl": "Nie można jej uchwycić, nie można porzucić",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不可得中只麼得",
+    "en": "In the ungettable, just thus it's gotten",
+    "pl": "W niemożliwym do zdobycia, właśnie tak się zdobywa",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "默時說說時默",
+    "en": "Silent when speaking, speaking when silent",
+    "pl": "Milczący mówiąc, mówiący w milczeniu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "大施門開無壅塞",
+    "en": "The gate of great giving opens without obstruction",
+    "pl": "Brama wielkiego dawania otwiera się bez przeszkód",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "有人問我解何宗",
+    "en": "When someone asks what school I understand",
+    "pl": "Gdy ktoś pyta, jaką szkołę rozumiem",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "報道摩訶般若力",
+    "en": "I reply: the power of Mahaprajna",
+    "pl": "Odpowiadam: moc Mahaprajni",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "或是或非人不識",
+    "en": "Right or wrong, people cannot recognize",
+    "pl": "Słuszne czy błędne, ludzie nie potrafią rozpoznać",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "逆行順行天莫測",
+    "en": "Going against or with, heaven cannot fathom",
+    "pl": "Idąc pod prąd czy z prądem, niebo nie może zgłębić",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "吾早曾經多劫修",
+    "en": "I have already practiced through many kalpas",
+    "pl": "Już praktykowałem przez wiele kalp",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不是等閒相誑惑",
+    "en": "This is not casual deception",
+    "pl": "To nie jest przypadkowe oszustwo",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "建法幢立宗旨",
+    "en": "Establishing the Dharma banner, setting up the teaching",
+    "pl": "Ustanawiając sztandar Dharmy, zakładając naukę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "明明佛勅曹溪是",
+    "en": "Clearly the Buddha's command points to Caoxi",
+    "pl": "Wyraźnie rozkaz Buddy wskazuje na Caoxi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "第一迦葉首傳燈",
+    "en": "First, Kashyapa initially transmitted the lamp",
+    "pl": "Najpierw Kashyapa początkowo przekazał lampę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "二十八代西天記",
+    "en": "Twenty-eight generations recorded in the Western Heaven",
+    "pl": "Dwadzieścia osiem pokoleń zapisanych w Zachodnim Niebie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "法東流入此土",
+    "en": "The Dharma flowed east into this land",
+    "pl": "Dharma popłynęła na wschód do tej ziemi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "菩提達磨為初祖",
+    "en": "Bodhidharma became the first patriarch",
+    "pl": "Bodhidharma został pierwszym patriarchą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "六代傳衣天下聞",
+    "en": "Six generations transmitted the robe, known throughout the world",
+    "pl": "Sześć pokoleń przekazało szatę, znane na całym świecie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "後人得道何窮數",
+    "en": "How countless those who later attained the Way",
+    "pl": "Jak niezliczeni ci, którzy później osiągnęli Drogę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "真不立妄本空",
+    "en": "Truth is not established, falseness is originally empty",
+    "pl": "Prawda nie jest ustanowiona, fałsz jest pierwotnie pusty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "有無俱遣不空空",
+    "en": "Both being and non-being dispelled, not-empty emptiness",
+    "pl": "Zarówno istnienie jak i nieistnienie rozproszone, nie-pusta pustka",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "二十空門元不著",
+    "en": "Twenty gates of emptiness fundamentally not attached to",
+    "pl": "Dwadzieścia bram pustki zasadniczo bez przywiązania",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一性如來體自同",
+    "en": "One nature, the Tathagata's essence naturally the same",
+    "pl": "Jedna natura, istota Tathagaty naturalnie ta sama",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "心是根法是塵",
+    "en": "Mind is the root, dharmas are dust",
+    "pl": "Umysł jest korzeniem, dharmy są pyłem",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "兩種猶如鏡上痕",
+    "en": "Both kinds are like stains upon a mirror",
+    "pl": "Oba rodzaje są jak plamy na lustrze",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "痕垢盡除光始現",
+    "en": "When stains and dirt are wiped away, light first appears",
+    "pl": "Gdy plamy i brud zostaną starte, światło się ukazuje",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "心法雙忘性即真",
+    "en": "When mind and dharmas both are forgotten, nature is truly real",
+    "pl": "Gdy umysł i dharmy są zapomniane, natura jest prawdziwie rzeczywista",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "嗟末法惡時世",
+    "en": "Alas! In the evil times of the Dharma's end",
+    "pl": "Biada! W złych czasach końca Dharmy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "眾生福薄難調制",
+    "en": "Beings have little merit and are hard to discipline",
+    "pl": "Istoty mają mało zasług i trudno je okiełznać",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "去聖遠兮邪見深",
+    "en": "Far from the sage, their wrong views run deep",
+    "pl": "Daleko od mędrca, ich błędne poglądy są głębokie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "魔強法弱多恐害",
+    "en": "Demons strong, Dharma weak—much fear and harm",
+    "pl": "Demony silne, Dharma słaba—wiele strachu i krzywdy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "聞說如來頓教門",
+    "en": "Hearing of the Tathagata's sudden teaching gate",
+    "pl": "Słysząc o bramie nagłej nauki Tathagaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "恨不滅除令瓦碎",
+    "en": "They hate not being able to smash it to pieces",
+    "pl": "Nienawidzą, że nie mogą rozbić jej na kawałki",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "作在心殃在身",
+    "en": "Actions in the mind bring calamity to the body",
+    "pl": "Czyny w umyśle sprowadzają nieszczęście na ciało",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不須冤訴更尤人",
+    "en": "No need to complain or blame others",
+    "pl": "Nie trzeba narzekać ani obwiniać innych",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "欲得不招無間業",
+    "en": "If you wish to avoid the karma of Avici hell",
+    "pl": "Jeśli chcesz uniknąć karmy piekła Avici",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "莫謗如來正法輪",
+    "en": "Do not slander the Tathagata's true Dharma wheel",
+    "pl": "Nie oczerniaj prawdziwego koła Dharmy Tathagaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "旃檀林無雜樹",
+    "en": "In sandalwood groves, no other trees grow",
+    "pl": "W gajach sandałowca nie rosną inne drzewa",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "欝密森沈師子住",
+    "en": "Dense and deep, where lions dwell",
+    "pl": "Gęste i głębokie, gdzie mieszkają lwy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "境靜林間獨自遊",
+    "en": "In quiet woods they wander alone",
+    "pl": "W cichych lasach wędrują samotnie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "走獸飛禽皆遠去",
+    "en": "Beasts and birds all flee far away",
+    "pl": "Zwierzęta i ptaki uciekają daleko",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "師子兒眾隨後",
+    "en": "Lion cubs follow behind in a group",
+    "pl": "Lwie młode podążają za nimi gromadą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "三歲便能大哮吼",
+    "en": "At three years old they can roar mightily",
+    "pl": "W wieku trzech lat potrafią potężnie ryczeć",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "若是野干逐法王",
+    "en": "But if jackals chase the Dharma King",
+    "pl": "Lecz jeśli szakale gonią Króla Dharmy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "百年妖怪虛開口",
+    "en": "Hundred-year-old demons vainly open their mouths",
+    "pl": "Stuletnie demony na próżno otwierają usta",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "圓頓教勿人情",
+    "en": "The perfect sudden teaching admits no human sentiment",
+    "pl": "Doskonała nagła nauka nie dopuszcza ludzkich sentymentów",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "有疑不決直須爭",
+    "en": "When doubts remain unresolved, one must directly contend",
+    "pl": "Gdy wątpliwości pozostają nierozwiązane, trzeba się bezpośrednio spierać",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不是山僧逞人我",
+    "en": "It's not that this mountain monk displays self and other",
+    "pl": "To nie tak, że ten górski mnich pokazuje ja i innych",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "修行恐落斷常坑",
+    "en": "In practice, I fear falling into pits of permanence or nihilism",
+    "pl": "W praktyce boję się wpaść w doły trwałości lub nihilizmu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "非不非是不是",
+    "en": "Neither wrong nor not wrong, neither right nor not right",
+    "pl": "Ani błędne ani nie błędne, ani słuszne ani nie słuszne",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "差之毫釐失千里",
+    "en": "Miss by a hair's breadth, lose a thousand miles",
+    "pl": "Chyb o włos, stracisz tysiąc mil",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "是則龍女頓成佛",
+    "en": "Right—the dragon girl instantly becomes Buddha",
+    "pl": "Słusznie—dziewczyna-smok natychmiast staje się Buddą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "非則善星生陷墜",
+    "en": "Wrong—Sunaksatra falls alive into hell",
+    "pl": "Błędnie—Sunaksatra żywcem wpada do piekła",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "吾早年來積學問",
+    "en": "In my early years I accumulated learning",
+    "pl": "We wczesnych latach gromadziłem wiedzę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "亦曾討疏尋經論",
+    "en": "I also studied commentaries and searched through sutras",
+    "pl": "Studiowałem też komentarze i przeszukiwałem sutry",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "分別名相不知休",
+    "en": "Distinguishing names and forms without knowing when to stop",
+    "pl": "Rozróżniając nazwy i formy nie wiedząc kiedy przestać",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "入海算沙徒自困",
+    "en": "Counting sand grains in the ocean, vainly troubling myself",
+    "pl": "Licząc ziarna piasku w oceanie, na próżno się męcząc",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "却被如來苦訶責",
+    "en": "I was severely scolded by the Tathagata",
+    "pl": "Zostałem surowo skarcony przez Tathagatę",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "數他珍寶有何益",
+    "en": "What benefit comes from counting others' treasures?",
+    "pl": "Jaki pożytek z liczenia cudzych skarbów?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "從來蹭蹬覺虛行",
+    "en": "I've stumbled along, aware my practice was empty",
+    "pl": "Potykałem się świadom, że moja praktyka była pusta",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "多年枉作風塵客",
+    "en": "For many years, vainly a traveler in wind and dust",
+    "pl": "Przez wiele lat na próżno wędrowcem w wietrze i kurzu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "種性邪錯知解",
+    "en": "Wrong in seed-nature and mistaken in understanding",
+    "pl": "Błędny w naturze nasienia i mylny w rozumieniu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不達如來圓頓制",
+    "en": "Not reaching the Tathagata's perfect sudden teaching",
+    "pl": "Nie osiągając doskonałej nagłej nauki Tathagaty",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "二乘精進勿道心",
+    "en": "The two vehicles diligently practice without the Way-mind",
+    "pl": "Dwa pojazdy pilnie praktykują bez umysłu Drogi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "外道聰明無智慧",
+    "en": "Outsiders are clever but lack wisdom",
+    "pl": "Obcy są sprytni, lecz brak im mądrości",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "亦愚癡亦小騃",
+    "en": "Both foolish and childishly naive",
+    "pl": "Zarówno głupi, jak i dziecinnie naiwni",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "空拳指上生實解",
+    "en": "From empty fist pointing up, they grasp at real meaning",
+    "pl": "Z pustej pięści wskazującej w górę chwytają prawdziwe znaczenie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "執指為月枉施功",
+    "en": "Taking the finger for the moon, they strive in vain",
+    "pl": "Biorąc palec za księżyc, daremnie się trudzą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "根境法中虛揑怪",
+    "en": "In roots, objects, and dharmas they falsely conjure oddities",
+    "pl": "W korzeniach, przedmiotach i dharmach fałszywie wyczarowują dziwactwa",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不見一法即如來",
+    "en": "Not seeing a single dharma is the Tathagata",
+    "pl": "Niewidzenie ani jednej dharmy to Tathagata",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "方得名為觀自在",
+    "en": "Only then can one be called Avalokiteshvara",
+    "pl": "Tylko wtedy można być nazwanym Avalokiteśvarą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "了即業障本來空",
+    "en": "Understanding this, karmic obstacles are originally empty",
+    "pl": "Zrozumiawszy to, karmiczne przeszkody są pierwotnie puste",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "未了應須還夙債",
+    "en": "Not understanding, one must still repay past debts",
+    "pl": "Nie rozumiejąc, trzeba wciąż spłacać dawne długi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "饑逢王饍不能飡",
+    "en": "Hungry, meeting royal feast, unable to eat",
+    "pl": "Głodny, spotykając królewską ucztę, nie może jeść",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "病遇醫王爭得瘥",
+    "en": "Sick, meeting the medicine king, how can one heal?",
+    "pl": "Chory, spotykając króla medycyny, jak może wyzdrowieć?",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "在欲行禪知見力",
+    "en": "Practicing Chan amid desires through power of knowing and seeing",
+    "pl": "Praktykując Chan pośród pragnień przez moc wiedzy i widzenia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "火中生蓮終不壞",
+    "en": "A lotus born in fire never destroyed",
+    "pl": "Lotos zrodzony w ogniu nigdy nie zginie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "勇施犯重悟無生",
+    "en": "Yongshi committed grave sins yet awakened to the unborn",
+    "pl": "Yongshi popełnił ciężkie grzechy, lecz przebudził się do nienarodzonego",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "早時成佛于今在",
+    "en": "He became a Buddha long ago and remains so now",
+    "pl": "Stał się Buddą dawno temu i pozostaje nim teraz",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "深嗟懵懂頑皮靼",
+    "en": "Deep sorrow for the confused and stubborn fools",
+    "pl": "Głęboki żal nad zdezorientowanymi i upornymi głupcami",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "秖知犯重障菩提",
+    "en": "They only know grave sins obstruct bodhi",
+    "pl": "Wiedzą tylko, że ciężkie grzechy blokują bodhi",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不見如來開祕訣",
+    "en": "Not seeing the Tathagata reveal the secret key",
+    "pl": "Nie widząc, jak Tathagata objawia sekretny klucz",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "有二比丘犯婬殺",
+    "en": "Two monks committed adultery and murder",
+    "pl": "Dwóch mnichów popełniło cudzołóstwo i morderstwo",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "波離螢光增罪結",
+    "en": "Upali's firefly light increased karmic bonds",
+    "pl": "Światło świetlika Upali wzmocniło karmiczne więzy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "維摩大士頓除疑",
+    "en": "The great sage Vimalakirti instantly removed doubts",
+    "pl": "Wielki mędrzec Vimalakirti natychmiast usunął wątpliwości",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "猶如赫日銷霜雪",
+    "en": "Just like the blazing sun melts frost and snow",
+    "pl": "Jak płonące słońce topi szron i śnieg",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "不思議解脫力",
+    "en": "Inconceivable liberation power",
+    "pl": "Niepojęta moc wyzwolenia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "妙用恒沙也無極",
+    "en": "Wondrous functions countless as Ganges sands, also limitless",
+    "pl": "Cudowne funkcje niezliczone jak piaski Gangesu, także bez granic",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "四事供養敢辭勞",
+    "en": "Four kinds of offerings—dare not shirk the labor",
+    "pl": "Cztery rodzaje ofiar — nie ośmielam się unikać trudu",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "萬兩黃金亦銷得",
+    "en": "Ten thousand taels of gold can also be consumed",
+    "pl": "Dziesięć tysięcy taeli złota także można strawić",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "粉骨碎身未足酬",
+    "en": "Grinding bones to dust, shattering the body—still not enough to repay",
+    "pl": "Roztarcie kości na proch, rozbicie ciała — wciąż nie wystarczy by spłacić",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一句了然超百億",
+    "en": "One phrase understood clearly surpasses a hundred billion",
+    "pl": "Jedno zdanie jasno zrozumiane przewyższa sto miliardów",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "法中王最高勝",
+    "en": "King of the Dharma, most supreme and victorious",
+    "pl": "Król Dharmy, najwyższy i zwycięski",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "恒沙如來同共證",
+    "en": "Tathagatas countless as Ganges sands all bear witness together",
+    "pl": "Tathagatowie niezliczeni jak piaski Gangesu wszyscy razem świadczą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "我今解此如意珠",
+    "en": "I now understand this wish-fulfilling pearl",
+    "pl": "Teraz rozumiem tę perłę spełniającą życzenia",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "信受之者皆相應",
+    "en": "Those who trust and receive it all correspond",
+    "pl": "Ci, którzy ufają i przyjmują, wszyscy współbrzmią",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "了了見無一物",
+    "en": "Clearly seeing there's not a single thing",
+    "pl": "Jasno widząc, że nie ma ani jednej rzeczy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "亦無人亦無佛",
+    "en": "Also no person, also no Buddha",
+    "pl": "Także żadnej osoby, także żadnego Buddy",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "大千沙界海中漚",
+    "en": "Great thousand sand-worlds are bubbles in the ocean",
+    "pl": "Wielkie tysiące światów z piasku to bąbelki w oceanie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "一切聖賢如電拂",
+    "en": "All sages and worthies flash by like lightning",
+    "pl": "Wszyscy święci i mędrcy przemykają jak błyskawica",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "假使鐵輪頂上旋",
+    "en": "Even if an iron wheel spins atop the head",
+    "pl": "Nawet gdyby żelazne koło wirowało na głowie",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "定慧圓明終不失",
+    "en": "Concentration and wisdom perfectly bright, never lost",
+    "pl": "Skupienie i mądrość doskonale jasne, nigdy nie utracone",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "日可冷月可熱",
+    "en": "The sun can turn cold, the moon can turn hot",
+    "pl": "Słońce może stać się zimne, księżyc może stać się gorący",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "眾魔不能壞真說",
+    "en": "The host of maras cannot destroy the true teaching",
+    "pl": "Zastępy mar nie mogą zniszczyć prawdziwej nauki",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "象駕崢嶸謾進途",
+    "en": "The elephant carriage advances majestically on its way",
+    "pl": "Słoni rydwan majestatycznie mknie swoją drogą",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "誰見螗蜋能拒轍",
+    "en": "Who has seen a mantis able to stop the wheel",
+    "pl": "Kto widział modliszkę zdolną zatrzymać koło",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "大象不遊於兔徑",
+    "en": "The great elephant does not walk on rabbit paths",
+    "pl": "Wielki słoń nie chodzi ścieżkami królików",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "大悟不拘於小節",
+    "en": "Great awakening is not bound by petty rules",
+    "pl": "Wielkie przebudzenie nie jest związane małymi regułami",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "莫將管見謗蒼蒼",
+    "en": "Do not use limited views to slander the vast blue sky",
+    "pl": "Nie używaj ograniczonych poglądów by oczerniać bezkresne niebo",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "未了吾今為君訣",
+    "en": "If you have not yet understood, I now make it clear for you",
+    "pl": "Jeśli jeszcze nie zrozumiałeś, teraz ci to wyjaśniam",
+    "notes": "證道歌 verse (永嘉玄覺大師)",
+    "type": "base"
+  },
+  {
+    "zh": "這學",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 絕學 as 這學; phrase-level because 這學 is common; in 證道歌 context 絕學=abandoned learning",
+    "type": "homophone"
+  },
+  {
+    "zh": "賢道人",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 閒道人 as 賢道人; 證道歌 opening line; 閒道人=idle man of the Way",
+    "type": "homophone"
+  },
+  {
+    "zh": "思訊",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 實性 as 思訊; 證道歌 line 無明實性即佛性; 實性=true nature",
+    "type": "homophone"
+  },
+  {
+    "zh": "記夫訊",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 即佛性 as 記夫訊; 證道歌 line; 即佛性=is Buddha-nature; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "空聲",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 空身 as 空聲; phrase-level because 空聲 (empty sound) is valid; in 證道歌 context 空身=empty body",
+    "type": "homophone"
+  },
+  {
+    "zh": "法聲",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 法身 as 法聲; 證道歌 line; 法身=dharma body; 法聲 is rare",
+    "type": "homophone"
+  },
+  {
+    "zh": "續觸摸",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 虛出沒 as 續觸摸; 證道歌 line 三毒水泡虛出沒; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "幻化聲",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 幻化身 as 幻化聲; 證道歌 context; 幻化身=illusory body",
+    "type": "homophone"
+  },
+  {
+    "zh": "貪稱吃",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 貪嗔痴 as 貪稱吃; three poisons; 稱吃 is nonsense in any context",
+    "type": "homophone"
+  },
+  {
+    "zh": "靈回",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 輪迴 as 靈回; samsara; 靈回 is not a real word",
+    "type": "homophone"
+  },
+  {
+    "zh": "山豬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三毒 as 山豬; three poisons; wild boar would never appear in dharma talk",
+    "type": "homophone"
+  },
+  {
+    "zh": "震大哥",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 震大哥; Song of Enlightenment; 震大哥 is nonsense",
+    "type": "homophone"
+  },
+  {
+    "zh": "起司就是無我",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 其實就是無我 as 起司就是無我; actually it is non-self; phrase-level because 起司 (cheese) is common",
+    "type": "homophone"
+  },
+  {
+    "zh": "罪滅核殺",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 罪滅河沙 as 罪滅核殺; sins as Ganges sands eliminated; 核殺 is nonsense in Buddhism",
+    "type": "homophone"
+  },
+  {
+    "zh": "舒服世界",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 娑婆世界 as 舒服世界; Saha world (world of suffering); 舒服 (comfortable) is phrase-level",
+    "type": "homophone"
+  },
+  {
+    "zh": "吉了世界",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 極樂世界 as 吉了世界; Land of Ultimate Bliss (Amitabha Pure Land); 吉了 is not a word",
+    "type": "homophone"
+  },
+  {
+    "zh": "大物徹底",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大悟徹底 as 大物徹底; thorough great awakening; 大物 (big object) is phrase-level",
+    "type": "homophone"
+  },
+  {
+    "zh": "小物",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 小悟 as 小物; small awakening; phrase-level because 小物 (small item) is common",
+    "type": "homophone"
+  },
+  {
+    "zh": "大物刺底",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大悟徹底 as 大物刺底; thorough great awakening; 刺底 is not a word",
+    "type": "homophone"
+  },
+  {
+    "zh": "小屋一點點",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 小悟一點點 as 小屋一點點; small awakening a little; phrase-level because 小屋 (hut) is common",
+    "type": "homophone"
+  },
+  {
+    "zh": "開大步的",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 開大悟的 as 開大步的; great awakening; phrase-level because 大步 (big step) is common",
+    "type": "homophone"
+  },
+  {
+    "zh": "小成人",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 小乘人 as 小成人; Hinayana practitioner; 小成人 is not a standard term",
+    "type": "homophone"
+  },
+  {
+    "zh": "小城的阿羅漢",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 小乘的阿羅漢 as 小城的阿羅漢; Hinayana arhat; phrase-level because 小城 (small city) is common",
+    "type": "homophone"
+  },
+  {
+    "zh": "二臂地獄",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 阿鼻地獄 as 二臂地獄; Avici hell; 二臂 (two arms) is phrase-level",
+    "type": "homophone"
+  },
+  {
+    "zh": "熱鍋上的馬衣",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 熱鍋上的螞蟻 as 熱鍋上的馬衣; ants on a hot pan (idiom); 馬衣 is nonsense",
+    "type": "homophone"
+  },
+  {
+    "zh": "代益往生",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 帶業往生 as 代益往生; carry karma to rebirth (Pure Land term); 代益 is not a word",
+    "type": "homophone"
+  },
+  {
+    "zh": "進土中",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 淨土宗 as 進土中; Pure Land school; phrase-level because 進土 could appear",
+    "type": "homophone"
+  },
+  {
+    "zh": "六度萬恨",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六度萬行 as 六度萬恨; six perfections ten thousand practices; 萬恨 (10k resentments) is phrase-level",
+    "type": "homophone"
+  },
+  {
+    "zh": "五大圈",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無大千 as 五大圈; no great chiliocosm; variant verse reading",
+    "type": "homophone"
+  },
+  {
+    "zh": "如來的殘",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來禪 as 如來的殘; Tathagata Chan; 殘 (remains) is phrase-level",
+    "type": "homophone"
+  },
+  {
+    "zh": "盧來禪",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來禪 as 盧來禪; Tathagata Chan; 盧來 is nonsense",
+    "type": "homophone"
+  },
+  {
+    "zh": "六道靈回",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六道輪迴 as 六道靈回; six-realm samsara; phrase-level because 靈回 already added",
+    "type": "homophone"
+  },
+  {
+    "zh": "三大臥勝奇跡",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三大阿僧祇劫 as 三大臥勝奇跡; three great asamkhyeya kalpas; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "三大歐升奇蹟",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三大阿僧祇劫 as 三大歐升奇蹟; three great asamkhyeya kalpas; garbled variant",
+    "type": "homophone"
+  },
+  {
+    "zh": "證俄羅漢果",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證阿羅漢果 as 證俄羅漢果; attain arhatship; 俄羅漢 (Russian man) → 阿羅漢 (arhat)",
+    "type": "homophone"
+  },
+  {
+    "zh": "俄羅漢",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 阿羅漢 as 俄羅漢; arhat; 俄羅 would never appear in Buddhism",
+    "type": "homophone"
+  },
+  {
+    "zh": "大欠世界",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大千世界 as 大欠世界; great chiliocosm; 大欠 is not a real term",
+    "type": "homophone"
+  },
+  {
+    "zh": "六驅",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六趣 as 六驅; six destinies (六道)",
+    "type": "homophone"
+  },
+  {
+    "zh": "出法心",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 初發心 as 出法心; initial aspiration/bodhicitta",
+    "type": "homophone"
+  },
+  {
+    "zh": "體重源",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 體中圓 as 體重源; 證道歌 verse sub-term: complete within essence",
+    "type": "homophone"
+  },
+  {
+    "zh": "萬痕",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 萬行 as 萬痕; myriad practices; standalone sub-term of 六度萬行",
+    "type": "homophone"
+  },
+  {
+    "zh": "晚痕",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 萬行 as 晚痕; myriad practices; variant mishearing",
+    "type": "homophone"
+  },
+  {
+    "zh": "出目",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 出沒 as 出目; appear and vanish; 水泡的出沒",
+    "type": "homophone"
+  },
+  {
+    "zh": "如來長",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來禪 as 如來長; Tathagata Chan; verse sub-term",
+    "type": "homophone"
+  },
+  {
+    "zh": "萬恨",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 萬行 as 萬恨; myriad practices; variant of 六度萬恨 as standalone",
+    "type": "homophone"
+  },
+  {
+    "zh": "無露法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無漏法 as 無露法; no-outflow dharma (asrava-free); 無露法 not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "無向法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無為法 as 無向法; unconditioned dharma (asamskrta); 無向法 not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "大援救",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大圓覺 as 大援救; great perfect enlightenment; 證道歌 verse 即是如來大圓覺",
+    "type": "homophone"
+  },
+  {
+    "zh": "神戳",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 神出 as 神戳; in idiom 神出鬼沒 (appear and vanish unpredictably); 神戳 meaningless",
+    "type": "homophone"
+  },
+  {
+    "zh": "如是陰",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如是因 as 如是陰; such causes (種如是因得如是果); 如是陰 not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "魔牛流馬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 木牛流馬 as 魔牛流馬; Zhuge Liang wooden ox and horse; 魔牛 = demon ox is wrong",
+    "type": "homophone"
+  },
+  {
+    "zh": "禪禁",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 壇經 as 禪禁; Platform Sutra (六祖壇經); phrase-level: 禪禁 could mean Chan prohibition",
+    "type": "homophone"
+  },
+  {
+    "zh": "六祖談經",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六祖壇經 as 六祖談經; Sixth Patriarch Platform Sutra; phrase-level: 談經 = discuss sutras",
+    "type": "homophone"
+  },
+  {
+    "zh": "副法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛法 as 副法; Buddhadharma; phrase-level: 副法 not standard but 副 is common prefix",
+    "type": "homophone"
+  },
+  {
+    "zh": "伏法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛法 as 伏法; Buddhadharma; phrase-level: 伏法 = submit to law, real term but wrong in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "征倒戈",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 征倒戈; Song of Enlightenment; new variant mishearing",
+    "type": "homophone"
+  },
+  {
+    "zh": "俘法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛法 as 俘法; Buddhadharma; 俘法 (capture-law) not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "扶法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛法 as 扶法; Buddhadharma; 扶法 (support-law) not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "夫法",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛法 as 夫法; Buddhadharma; 夫法 (husband-law) not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "媽媽胡胡",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 馬馬虎虎 as 媽媽胡胡; idiom: so-so/careless; phonetic mishearing",
+    "type": "homophone"
+  },
+  {
+    "zh": "厄南尊在",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 阿難尊者 as 厄南尊在; Venerable Ananda; 厄南 not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "盲人模像",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 盲人摸象 as 盲人模像; blind men and the elephant; 模像→摸象",
+    "type": "homophone"
+  },
+  {
+    "zh": "天方夜潭",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 天方夜譚 as 天方夜潭; Arabian Nights; 潭(pool)→譚(tales)",
+    "type": "homophone"
+  },
+  {
+    "zh": "摩尼祖",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 摩尼珠 as 摩尼祖; mani pearl (如意珠); 祖(ancestor)→珠(pearl)",
+    "type": "homophone"
+  },
+  {
+    "zh": "小缺蓋",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 小乞丐 as 小缺蓋; little beggar; 缺蓋 not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "小丘蓋",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 小乞丐 as 小丘蓋; little beggar; variant mishearing",
+    "type": "homophone"
+  },
+  {
+    "zh": "樓來站",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來藏 as 樓來站; Tathagatagarbha (如來藏); 樓來 not standard",
+    "type": "homophone"
+  },
+  {
+    "zh": "爐來杖",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來藏 as 爐來杖; Tathagatagarbha; variant mishearing",
+    "type": "homophone"
+  },
+  {
+    "zh": "凡文",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 梵文 as 凡文; Sanskrit; phrase-level: 凡文 could mean ordinary text",
+    "type": "homophone"
+  },
+  {
+    "zh": "直覺了當",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 直截了當 as 直覺了當; straightforward; phrase-level: 直覺(intuition) is common",
+    "type": "homophone"
+  },
+  {
+    "zh": "摩尼豬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 摩尼珠 as 摩尼豬; Video #10: 珠(pearl) misheard as 豬(pig)",
+    "type": "homophone"
+  },
+  {
+    "zh": "泥潘城",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 涅槃城 as 泥潘城; Video #11: 涅槃城 garbled as 泥潘城",
+    "type": "homophone"
+  },
+  {
+    "zh": "無尊法忍",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無生法忍 as 無尊法忍; Video #11: 無生法忍 misheard as 無尊法忍",
+    "type": "homophone"
+  },
+  {
+    "zh": "道貿安然",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 道貌岸然 as 道貿安然; Video #11: idiom 道貌岸然 garbled as 道貿安然",
+    "type": "homophone"
+  },
+  {
+    "zh": "歐米陀佛",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 阿彌陀佛 as 歐米陀佛; Video #10: 阿彌陀佛 garbled as 歐米陀佛",
+    "type": "homophone"
+  },
+  {
+    "zh": "無神法忍",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無生法忍 as 無神法忍; Video #11: 無生法忍 misheard as 無神法忍",
+    "type": "homophone"
+  },
+  {
+    "zh": "大物測敵",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大悟徹底 as 大物測敵; Video #10: 大悟徹底 garbled as 大物測敵",
+    "type": "homophone"
+  },
+  {
+    "zh": "進步見",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 君不見 as 進步見; ZDG verse opening; Whisper mishears 君不見 as 進步見",
+    "type": "homophone"
+  },
+  {
+    "zh": "如來葬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來藏 as 如來葬; Tathagata-garbha; 藏(zàng)→葬(zàng) same tone different char",
+    "type": "homophone"
+  },
+  {
+    "zh": "六半神用",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六般神用 as 六半神用; ZDG verse; 般→半",
+    "type": "homophone"
+  },
+  {
+    "zh": "是灰色",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 色非色 as 是灰色; ZDG verse fragment; garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "南口車",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 難可測 as 南口車; ZDG verse; 難可測 garbled as 南口車",
+    "type": "homophone"
+  },
+  {
+    "zh": "水中豬肉",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 水中捉月 as 水中豬肉; ZDG verse; 捉月(grasp moon)→豬肉(pork) catastrophic",
+    "type": "homophone"
+  },
+  {
+    "zh": "巫言",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 五眼 as 巫言; Five Eyes; 五(wǔ)→巫(wū)",
+    "type": "homophone"
+  },
+  {
+    "zh": "第三個言",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 第三個眼 as 第三個言; third eye; 眼→言",
+    "type": "homophone"
+  },
+  {
+    "zh": "茂翠",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 貌悴 as 茂翠; ZDG verse; 貌悴(gaunt)→茂翠(lush green)",
+    "type": "homophone"
+  },
+  {
+    "zh": "郭肝",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 骨剛 as 郭肝; ZDG verse; 骨剛(strong bones)→郭肝",
+    "type": "homophone"
+  },
+  {
+    "zh": "米勒日報",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 密勒日巴 as 米勒日報; Milarepa; garbled as newspaper name",
+    "type": "homophone"
+  },
+  {
+    "zh": "牡蠣豬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 摩尼珠 as 牡蠣豬; Video #13: 摩尼珠 garbled as 牡蠣豬 (oyster pig!)",
+    "type": "homophone"
+  },
+  {
+    "zh": "吳家針",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無價珍 as 吳家針; Video #13: 無價珍(priceless treasure) garbled as 吳家針",
+    "type": "homophone"
+  },
+  {
+    "zh": "副教徒",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛教徒 as 副教徒; Video #13: 佛教徒 misheard as 副教徒 throughout",
+    "type": "homophone"
+  },
+  {
+    "zh": "四兩不千斤",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 四兩撥千斤 as 四兩不千斤; Video #13: idiom 四兩撥千斤 garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "貴遺弟子",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 皈依弟子 as 貴遺弟子; Video #13: 皈依弟子 garbled as 貴遺弟子",
+    "type": "homophone"
+  },
+  {
+    "zh": "歸遺",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 皈依 as 歸遺; Video #13: 皈依 garbled as 歸遺",
+    "type": "homophone"
+  },
+  {
+    "zh": "貴一三寶",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 皈依三寶 as 貴一三寶; Video #13: 皈依三寶 garbled as 貴一三寶",
+    "type": "homophone"
+  },
+  {
+    "zh": "鼻孔尼",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 比丘尼 as 鼻孔尼; Video #12: 比丘尼 garbled as 鼻孔尼",
+    "type": "homophone"
+  },
+  {
+    "zh": "分殺衣",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 糞掃衣 as 分殺衣; Video #12: 糞掃衣(refuse rags) garbled as 分殺衣",
+    "type": "homophone"
+  },
+  {
+    "zh": "夫教徒",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛教徒 as 夫教徒; Video #12: 佛教徒 misheard as 夫教徒",
+    "type": "homophone"
+  },
+  {
+    "zh": "東出老人",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 東初老人 as 東出老人; Video #12: 東初老人(Master Dongchu) garbled as 東出老人",
+    "type": "homophone"
+  },
+  {
+    "zh": "禪盒子",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 禪和子 as 禪盒子; Video #12: 禪和子(Chan practitioner) garbled as 禪盒子",
+    "type": "homophone"
+  },
+  {
+    "zh": "口稱瓶",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 口稱貧 as 口稱瓶; ZDG12 verse; 貧(poor)→瓶(bottle)",
+    "type": "homophone"
+  },
+  {
+    "zh": "生平到不平",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 身貧道不貧 as 生平到不平; ZDG12 verse; catastrophically garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "無駕增",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 無價珍 as 無駕增; ZDG12 verse; 無價珍(priceless treasure) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "大地址",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大弟子 as 大地址; ZDG12; 大弟子(great disciple)→大地址(big address)",
+    "type": "homophone"
+  },
+  {
+    "zh": "說明通",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 宿命通 as 說明通; Video #15: 宿命通(past-life power) garbled as 說明通 throughout",
+    "type": "homophone"
+  },
+  {
+    "zh": "漏鏡通",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 漏盡通 as 漏鏡通; Video #15: 漏盡通(outflow-exhaustion power) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "漏金通",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 漏盡通 as 漏金通; Video #15: 漏盡通 garbled as 漏金通",
+    "type": "homophone"
+  },
+  {
+    "zh": "天兒通",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 天耳通 as 天兒通; Video #15: 天耳通(celestial ear) garbled as 天兒通",
+    "type": "homophone"
+  },
+  {
+    "zh": "八截拓",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 八解脫 as 八截拓; Video #15: 八解脫(eight liberations) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "八背碎",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 八背捨 as 八背碎; Video #15: 八背捨(eight relinquishments) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "達姆祖師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 達摩祖師 as 達姆祖師; Video #14: Bodhidharma garbled as 達姆祖師",
+    "type": "homophone"
+  },
+  {
+    "zh": "捏盤",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 涅槃 as 捏盤; Video #14: 涅槃 garbled as 捏盤",
+    "type": "homophone"
+  },
+  {
+    "zh": "三勝四字",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三身四智 as 三勝四字; Video #14: 三身四智 garbled as 三勝四字",
+    "type": "homophone"
+  },
+  {
+    "zh": "轉發人區",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 轉法輪 as 轉發人區; Video #14: 轉法輪(turn dharma wheel) garbled as 轉發人區",
+    "type": "homophone"
+  },
+  {
+    "zh": "煎牢",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 監牢 as 煎牢; Video #17: 監牢(prison) garbled as 煎牢(fried prison)",
+    "type": "homophone"
+  },
+  {
+    "zh": "冤家露宅",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 冤家路窄 as 冤家露宅; Video #17: idiom 冤家路窄(enemies meet on narrow road) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "前車之劍",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 前車之鑑 as 前車之劍; Video #17: idiom 前車之鑑(lesson from past) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "從他綁",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 從他謗 as 從他綁; Video #17: 證道歌 verse 從他謗(let them slander) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "徒字皮",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 徒自疲 as 徒字皮; Video #17: 證道歌 verse 徒自疲(only exhausts oneself) garbled",
+    "type": "homophone"
+  },
+  {
+    "zh": "廚紙皮",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 徒自疲 as 廚紙皮; Video #17: another variant of 徒自疲",
+    "type": "homophone"
+  },
+  {
+    "zh": "引甘乳",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 飲甘露 as 引甘乳; Video #17: 飲甘露(drink sweet dew) garbled as 引甘乳",
+    "type": "homophone"
+  },
+  {
+    "zh": "狗藝",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 垢衣 as 狗藝; defiled robe (verse: 但自懷中解垢衣)",
+    "type": "homophone"
+  },
+  {
+    "zh": "大車大霧",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大徹大悟 as 大車大霧; great thorough awakening — idiom",
+    "type": "homophone"
+  },
+  {
+    "zh": "歐爾南",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 阿難 as 歐爾南; Ānanda — Buddha's attendant",
+    "type": "homophone"
+  },
+  {
+    "zh": "加水正宅",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 迦葉尊者 as 加水正宅; Venerable Kāśyapa",
+    "type": "homophone"
+  },
+  {
+    "zh": "農產師",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農產師; Nung Chan Monastery (聖嚴法師's temple)",
+    "type": "homophone"
+  },
+  {
+    "zh": "貨人劍",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 活人劍 as 貨人劍; life-giving sword — Chan term (殺人刀活人劍)",
+    "type": "homophone"
+  },
+  {
+    "zh": "紙上貪兵",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 紙上談兵 as 紙上貪兵; armchair strategy — idiom",
+    "type": "homophone"
+  },
+  {
+    "zh": "大幅長宅",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大富長者 as 大幅長宅; great wealthy elder — Buddhist parable",
+    "type": "homophone"
+  },
+  {
+    "zh": "一聊百聊",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 一了百了 as 一聊百聊; once resolved all resolved — idiom",
+    "type": "homophone"
+  },
+  {
+    "zh": "鄧無",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 頓悟 as 鄧無; sudden awakening",
+    "type": "homophone"
+  },
+  {
+    "zh": "園寄",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 圓寂 as 園寄; parinirvāṇa — passing of a monk/Buddha",
+    "type": "homophone"
+  },
+  {
+    "zh": "解各一",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 解垢衣 as 解各一; remove defiled robe — verse sub-term",
+    "type": "homophone"
+  },
+  {
+    "zh": "跨精進",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 誇精進 as 跨精進; boast of diligence — verse sub-term (誇 not 跨)",
+    "type": "homophone"
+  },
+  {
+    "zh": "忍若",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 忍辱 as 忍若; endurance/patience (kṣānti); 辱→若 systematic in this series",
+    "type": "homophone"
+  },
+  {
+    "zh": "提普大多",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 提婆達多 as 提普大多; Devadatta — Buddha's rival cousin",
+    "type": "homophone"
+  },
+  {
+    "zh": "提布大多",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 提婆達多 as 提布大多; Devadatta — variant garbling",
+    "type": "homophone"
+  },
+  {
+    "zh": "提佛大多",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 提婆達多 as 提佛大多; Devadatta — variant garbling",
+    "type": "homophone"
+  },
+  {
+    "zh": "高貓子",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 高帽子 as 高貓子; tall hat — flattery idiom",
+    "type": "homophone"
+  },
+  {
+    "zh": "高猫",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 高帽 as 高猫; tall hat — flattery idiom (short form)",
+    "type": "homophone"
+  },
+  {
+    "zh": "塞翁師馬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 塞翁失馬 as 塞翁師馬; idiom: the old man lost his horse (blessings in disguise)",
+    "type": "homophone"
+  },
+  {
+    "zh": "瘋刀",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 鋒刀 as 瘋刀; sharp blade — verse: 縱遇鋒刀常坦坦",
+    "type": "homophone"
+  },
+  {
+    "zh": "法花金",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 法華經 as 法花金; Lotus Sutra (Saddharmapuṇḍarīka)",
+    "type": "homophone"
+  },
+  {
+    "zh": "然等佛",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 燃燈佛 as 然等佛; Dīpaṃkara Buddha (Lamp-lighter)",
+    "type": "homophone"
+  },
+  {
+    "zh": "斯加茫女",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 釋迦牟尼 as 斯加茫女; Śākyamuni — garbled proper name",
+    "type": "homophone"
+  },
+  {
+    "zh": "塞加姆尼",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 釋迦牟尼 as 塞加姆尼; Śākyamuni — garbled proper name",
+    "type": "homophone"
+  },
+  {
+    "zh": "塞加牟尼",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 釋迦牟尼 as 塞加牟尼; Śākyamuni — garbled proper name",
+    "type": "homophone"
+  },
+  {
+    "zh": "回頭是暗",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 回頭是岸 as 回頭是暗; idiom: turn back and the shore is there (repentance)",
+    "type": "homophone"
+  },
+  {
+    "zh": "觀運常",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 關雲長 as 觀運常; Guan Yu (Romance of Three Kingdoms)",
+    "type": "homophone"
+  },
+  {
+    "zh": "關雲昌",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 關雲長 as 關雲昌; Guan Yu — 昌→長",
+    "type": "homophone"
+  },
+  {
+    "zh": "獅子猴",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 獅子吼 as 獅子猴; lion's roar — fearless teaching of dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "穆金蓮",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 目犍連 as 穆金蓮; Maudgalyāyana — one of Buddha's chief disciples",
+    "type": "homophone"
+  },
+  {
+    "zh": "瑟利福",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 舍利弗 as 瑟利福; Śāriputra — one of Buddha's chief disciples",
+    "type": "homophone"
+  },
+  {
+    "zh": "山加石",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三迦葉 as 山加石; Three Kāśyapa brothers — early converts",
+    "type": "homophone"
+  },
+  {
+    "zh": "分斷生死",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 分段生死 as 分斷生死; cyclic birth-and-death (凡夫 type)",
+    "type": "homophone"
+  },
+  {
+    "zh": "分斷盛世",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 分段生死 as 分斷盛世; cyclic birth-and-death — variant garbling",
+    "type": "homophone"
+  },
+  {
+    "zh": "變異盛世",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 變易生死 as 變異盛世; transformational birth-and-death (聖人 type)",
+    "type": "homophone"
+  },
+  {
+    "zh": "變異生世",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 變易生死 as 變異生世; transformational birth-and-death — variant",
+    "type": "homophone"
+  },
+  {
+    "zh": "變一生時",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 變易生死 as 變一生時; transformational birth-and-death — variant",
+    "type": "homophone"
+  },
+  {
+    "zh": "潮騎路",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 曹溪路 as 潮騎路; path to Caoxi (六祖惠能's monastery)",
+    "type": "homophone"
+  },
+  {
+    "zh": "愛染失色",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 黯然失色 as 愛染失色; idiom: lose luster / pale in comparison",
+    "type": "homophone"
+  },
+  {
+    "zh": "大善之社",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 大善知識 as 大善之社; great spiritual teachers (kalyāṇa-mitra)",
+    "type": "homophone"
+  },
+  {
+    "zh": "惠能大使",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 惠能大師 as 惠能大使; Great Master Huineng — 大使(ambassador)→大師(master)",
+    "type": "homophone"
+  },
+  {
+    "zh": "言論王",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 閻羅王 as 言論王; Yama — King of Hell (閻羅王)",
+    "type": "homophone"
+  },
+  {
+    "zh": "出三接",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 出三界 as 出三接; transcend the three realms (欲界/色界/無色界)",
+    "type": "homophone"
+  },
+  {
+    "zh": "遁物",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 頓悟 as 遁物; sudden awakening — variant garbling",
+    "type": "homophone"
+  },
+  {
+    "zh": "回榜",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 毀謗 as 回榜; slander/defamation — 毀謗→回榜",
+    "type": "homophone"
+  },
+  {
+    "zh": "贊叶",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 讚歎 as 贊叶; praise/admiration — 讚歎→贊叶",
+    "type": "homophone"
+  },
+  {
+    "zh": "振道哥",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 振道哥; Song of Enlightenment — 證→振, 歌→哥",
+    "type": "homophone"
+  },
+  {
+    "zh": "真道哥",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 證道歌 as 真道哥; Song of Enlightenment — variant garbling",
+    "type": "homophone"
+  },
+  {
+    "zh": "靈命中時",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 臨命終時 as 靈命中時; at the time of death — Buddhist term",
+    "type": "homophone"
+  },
+  {
+    "zh": "趁怨再來",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 乘願再來 as 趁怨再來; return on the power of vows — bodhisattva vow",
+    "type": "homophone"
+  },
+  {
+    "zh": "付小計",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 孵小雞 as 付小計; hatch baby chicks — 孵→付, 雞→計",
+    "type": "homophone"
+  },
+  {
+    "zh": "報復腳",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 抱佛腳 as 報復腳; grab Buddha's feet — idiom: last-minute cramming",
     "type": "homophone"
   }
 ]

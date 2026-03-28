@@ -630,17 +630,21 @@ async function processChunk(blob) {
     const cleaned = dedupStt(rawChinese);
     if (!cleaned) return;
 
-    // 3. Glossary homophone correction
-    const chinese = correctChinese(cleaned);
+    // 3. Classical Chinese verse correction (pinyin fuzzy match)
+    const matched = (window.PinyinMatcher && PinyinMatcher.isReady())
+      ? PinyinMatcher.matchVerses(cleaned) : cleaned;
 
-    // 4. Claude translation (skip if no EN/PL needed on any display)
+    // 4. Glossary homophone correction
+    const chinese = correctChinese(matched);
+
+    // 5. Claude translation (skip if no EN/PL needed on any display)
     const needsTranslation = showEn.checked || showPl.checked || liveEn.checked || livePl.checked;
     let english = '', polish = '';
     if (needsTranslation) {
       ({ english, polish } = await callClaude(chinese));
     }
 
-    // 5. Build segment
+    // 6. Build segment
     const segment = {
       id: ++segId,
       chinese,
@@ -651,7 +655,7 @@ async function processChunk(blob) {
     segments.push(segment);
     persistSession();
 
-    // 6. Display
+    // 7. Display
     addSegment(segment);
 
     // 7. Publish to Supabase (if configured)
@@ -1184,6 +1188,14 @@ async function init() {
   loadSettings();
   restoreSession();
   await loadGlossary();
+
+  // Load pinyin matcher for classical Chinese verse correction
+  if (window.PinyinMatcher) {
+    try {
+      await PinyinMatcher.init('zhengdaoge.json');
+    } catch (e) { console.warn('PinyinMatcher init failed:', e); }
+  }
+
   initSupabase();
 
   // Check for encrypted config in URL hash
