@@ -28,6 +28,16 @@
 
   // -- Helpers -----------------------------------------------------------------
 
+  /** CJK Unified Ideographs (basic + ext-A + ext-B) */
+  var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf]/;
+
+  /**
+   * Test whether a character is a CJK ideograph.
+   * @param {string} ch  Single character
+   * @returns {boolean}
+   */
+  function isCJK(ch) { return CJK_RE.test(ch); }
+
   /**
    * Convert Chinese text to tone-stripped pinyin syllables.
    * @param {string} text
@@ -54,7 +64,7 @@
     if (n === 0) return m;
     if (m === 0) return n;
     // Early bail: if lengths differ by more than max plausible edit distance
-    if (Math.abs(n - m) > 2) return Math.abs(n - m);
+    if (Math.abs(n - m) > 3) return Math.abs(n - m);
 
     // Single-row DP
     var prev = new Array(m + 1);
@@ -83,8 +93,9 @@
    */
   function maxEditDistance(syllableCount) {
     if (syllableCount <= 3) return 0;  // exact match only
-    if (syllableCount <= 7) return 2;
-    return 2;  // 8+ syllables
+    if (syllableCount <= 5) return 1;
+    if (syllableCount <= 9) return 2;
+    return 3;  // 10+ syllables
   }
 
   // -- Public API --------------------------------------------------------------
@@ -147,12 +158,27 @@
     if (!text || !totalVerses) return text;
 
     var chars = Array.from(text);  // handles surrogate pairs
-    var inputPinyin = toPinyin(text);
+
+    // Build punctuation-stripped text with index mapping.
+    // Whisper inserts ，。、；％ and fullwidth Latin mid-verse — strip everything
+    // that isn't CJK before matching, but keep a map back to original positions
+    // so replacements cover the full span including embedded punctuation.
+    var cleanChars = [];
+    var cleanToOrig = [];  // cleanToOrig[i] = index in chars[] for clean char i
+    for (var i = 0; i < chars.length; i++) {
+      if (isCJK(chars[i])) {
+        cleanChars.push(chars[i]);
+        cleanToOrig.push(i);
+      }
+    }
+
+    var cleanText = cleanChars.join('');
+    var inputPinyin = toPinyin(cleanText);
     var n = inputPinyin.length;
 
     if (n < minLength) return text;
 
-    // Collect match candidates: [start, end, verseZh, editDist]
+    // Collect match candidates: [cleanStart, cleanEnd, verseZh, editDist]
     var candidates = [];
 
     // Slide window from longest to shortest verse length
@@ -169,9 +195,9 @@
           var verse = bucket[v];
           var dist = levenshtein(window, verse.pinyin);
           if (dist <= maxDist) {
-            // Skip if text already matches exactly
-            var originalSpan = chars.slice(start, start + w).join('');
-            if (originalSpan === verse.zh) continue;
+            // Skip if clean text already matches exactly
+            var cleanSpan = cleanChars.slice(start, start + w).join('');
+            if (cleanSpan === verse.zh) continue;
             candidates.push([start, start + w, verse.zh, dist]);
           }
         }
@@ -187,18 +213,27 @@
     });
 
     var used = new Uint8Array(n);  // 0 = free
-    var replacements = [];
+    var replacements = [];  // [origStart, origEnd, verseZh]
 
     for (var c = 0; c < candidates.length; c++) {
       var cand = candidates[c];
       var s = cand[0], e = cand[1];
       var overlap = false;
-      for (var i = s; i < e; i++) {
-        if (used[i]) { overlap = true; break; }
+      for (var j = s; j < e; j++) {
+        if (used[j]) { overlap = true; break; }
       }
       if (overlap) continue;
-      replacements.push([s, e, cand[2]]);
-      for (var i = s; i < e; i++) used[i] = 1;
+
+      // Map clean indices back to original text positions
+      var origStart = cleanToOrig[s];
+      // origEnd: one past the last original char covered by this span
+      // (includes any punctuation between matched CJK chars)
+      var origEnd = (e < cleanToOrig.length)
+        ? cleanToOrig[e]    // start of next clean char
+        : chars.length;     // matched to end of text
+
+      replacements.push([origStart, origEnd, cand[2]]);
+      for (var j = s; j < e; j++) used[j] = 1;
     }
 
     if (!replacements.length) return text;

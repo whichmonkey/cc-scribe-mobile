@@ -103,6 +103,26 @@ async function runTests() {
   var twoEdit = PinyinMatcher.matchVerses('不猪妄想不丢真');
   assert('7-syllable 2-edit match (threshold=2)', twoEdit, '不除妄想不求真');
 
+  // -- Punctuation stripping --
+  print('\n== Punctuation stripping ==');
+  // Comma inserted mid-verse by Whisper
+  var withComma = PinyinMatcher.matchVerses('绝学无为，闲道人');
+  assert('comma mid-verse stripped and matched', withComma, '絕學無為閒道人');
+
+  // Multiple punctuation types
+  var withMixed = PinyinMatcher.matchVerses('绝学、无为。闲道人');
+  assert('mixed punctuation stripped and matched', withMixed, '絕學無為閒道人');
+
+  // Fullwidth Latin (Whisper artefact like Ｂ) embedded in verse
+  var withLatin = PinyinMatcher.matchVerses('入深山Ｂ住蓝若');
+  // Should strip Ｂ, match 6 clean CJK chars against any 6-syllable verse
+  // (no 6-syllable verse in test set, so this just tests stripping doesn't break)
+
+  // Punctuation at boundaries — leading context preserved, trailing punctuation
+  // absorbed into replacement span (origEnd = position of next clean char)
+  var surrounded = PinyinMatcher.matchVerses('是故，绝学无为闲道人，也');
+  assert('leading context preserved, trailing punct absorbed', surrounded, '是故，絕學無為閒道人也');
+
   // -- Multiple verses in one segment --
   print('\n== Multiple verses in segment ==');
   var multi = PinyinMatcher.matchVerses('绝学无为闲道人不除妄想不求真');

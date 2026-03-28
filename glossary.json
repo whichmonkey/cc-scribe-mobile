@@ -37781,5 +37781,348 @@
     "pl": "",
     "notes": "Homophone alias — Whisper mishears 抱佛腳 as 報復腳; grab Buddha's feet — idiom: last-minute cramming",
     "type": "homophone"
+  },
+  {
+    "zh": "蘭蕊",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 蘭若 as 蘭蕊; Buddhist hermitage; 蘭蕊 (orchid pistil) never appears in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "朝鮮團",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 朝山團 as 朝鮮團; pilgrimage group; Whisper hears Korea (朝鮮) instead of pilgrimage (朝山)",
+    "type": "homophone"
+  },
+  {
+    "zh": "朝僧團",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 朝山團 as 朝僧團; pilgrimage group; Whisper hears morning-monk instead of pilgrimage",
+    "type": "homophone"
+  },
+  {
+    "zh": "活上",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 和尚 as 活上; monk; Whisper splits hé shàng into huó shàng",
+    "type": "homophone"
+  },
+  {
+    "zh": "子雞",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 自己 as 子雞; oneself; 子雞 (chick) never appears in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "富豹",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 福報 as 富豹; merit/blessings; 富豹 (rich leopard) never appears in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "貴翼",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 皈依 as 貴翼; taking refuge; 貴翼 (expensive wing) never natural",
+    "type": "homophone"
+  },
+  {
+    "zh": "貴姨",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 皈依 as 貴姨; taking refuge; 貴姨 (expensive aunt) never natural",
+    "type": "homophone"
+  },
+  {
+    "zh": "公墨",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 公墓 as 公墨; cemetery; 公墨 (public ink) never natural",
+    "type": "homophone"
+  },
+  {
+    "zh": "電牛",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 電鈕 as 電牛; push-button; 電牛 (electric cow) never natural",
+    "type": "homophone"
+  },
+  {
+    "zh": "杜仲生",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 度眾生 as 杜仲生; save sentient beings; 杜仲 is a plant, never appears in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "探稱吃",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 貪嗔痴 as 探稱吃; three poisons (greed, anger, delusion); 探稱吃 never natural",
+    "type": "homophone"
+  },
+  {
+    "zh": "如意豬",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如意珠 as 如意豬; wish-fulfilling jewel; 如意豬 (wish-pig!) never natural",
+    "type": "homophone"
+  },
+  {
+    "zh": "磁機工",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 慈濟功 as 磁機工; Tzu Chi merit; Whisper garbles 慈濟功德會",
+    "type": "homophone"
+  },
+  {
+    "zh": "普及星",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 菩提心 as 普及星; bodhicitta; 普及星 (universal star) unlikely in dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "農產世界",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 農禪寺 as 農產世界; Nung Chan Monastery; unique compound, no false-positive risk",
+    "type": "homophone"
+  },
+  {
+    "zh": "金剛軍",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 金剛經 as 金剛軍; Diamond Sutra; 軍(army) never follows 金剛 in dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "金剛精",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 金剛經 as 金剛精; Diamond Sutra; variant garble of 金剛經",
+    "type": "homophone"
+  },
+  {
+    "zh": "福信",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 佛性 as 福信; Buddha-nature; 福信 unlikely in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "打殘",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 打禪 as 打殘; Chan retreat/meditation; 打殘(maim) nonsensical in dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "開屋",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 開悟 as 開屋; awakening; 開屋(open room) never in dharma context",
+    "type": "homophone"
+  },
+  {
+    "zh": "貪嗔詞",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 貪嗔癡 as 貪嗔詞; Three Poisons; 詞(word) never pairs with 貪嗔",
+    "type": "homophone"
+  },
+  {
+    "zh": "貪稱之",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 貪嗔癡 as 貪稱之; Three Poisons; 稱之 is phonetic garble of 嗔癡",
+    "type": "homophone"
+  },
+  {
+    "zh": "三色二項",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三十二相 as 三色二項; 32 marks of a great being; unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "三少向",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三十二相 as 三少向; 32 marks; unique garble of 三十二相",
+    "type": "homophone"
+  },
+  {
+    "zh": "羅來軍",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 如來相 as 羅來軍; Tathagata form; 羅來軍 unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "毒量",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 度量 as 毒量; magnanimity; 毒量(poison dosage) nonsensical",
+    "type": "homophone"
+  },
+  {
+    "zh": "墨魚",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 木魚 as 墨魚; wooden fish (ritual instrument); 墨魚(cuttlefish) never in dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "魚翅",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 愚痴 as 魚翅; ignorance/delusion; 魚翅(shark fin) never in dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "深仇禪世",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 僧稠禪師 as 深仇禪世; Master Sengchou; unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "弟藏",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 地藏 as 弟藏; Ksitigarbha Bodhisattva; 弟藏 nonsensical",
+    "type": "homophone"
+  },
+  {
+    "zh": "六部落咪",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六波羅蜜 as 六部落咪; six paramitas; unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "火光山昧",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 火光三昧 as 火光山昧; fire-light samadhi; 山昧 unique garble of 三昧",
+    "type": "homophone"
+  },
+  {
+    "zh": "祝生",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 畜生 as 祝生; animal realm; 祝生 nonsensical in dharma",
+    "type": "homophone"
+  },
+  {
+    "zh": "供羊",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 供養 as 供羊; offering/support; 供羊(offering sheep) nonsensical",
+    "type": "homophone"
+  },
+  {
+    "zh": "富田",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 福田 as 富田; merit field; 富田(rich field) close but wrong term",
+    "type": "homophone"
+  },
+  {
+    "zh": "明治比丘",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 名字比丘 as 明治比丘; name-only monk (Vinaya term); 明治 unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "禁朝",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 晉朝 as 禁朝; Jin Dynasty; 禁朝 nonsensical",
+    "type": "homophone"
+  },
+  {
+    "zh": "輸諦",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 俗諦 as 輸諦; conventional truth (Two Truths); 輸(lose)→俗(worldly)",
+    "type": "homophone"
+  },
+  {
+    "zh": "書弟",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 俗諦 as 書弟; conventional truth; 書弟 unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "三加设",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三迦葉 as 三加设; three Kashyapa brothers; unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "三家車",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 三迦葉 as 三家車; three Kashyapa brothers; variant garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "架式",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 迦葉 as 架式; Kashyapa; 架式(posture) phonetically close",
+    "type": "homophone"
+  },
+  {
+    "zh": "六肚",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 六度 as 六肚; six perfections (paramitas); 六肚(six bellies) nonsensical",
+    "type": "homophone"
+  },
+  {
+    "zh": "今進",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 精進 as 今進; diligent effort (virya); 今進 phonetically close",
+    "type": "homophone"
+  },
+  {
+    "zh": "慈藉",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 持戒 as 慈藉; uphold precepts (sila); unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "足籠",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 毒龍 as 足籠; poison dragon; 足籠 unique garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "加沙",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 袈裟 as 加沙; kasaya robe; 加沙 phonetic garble",
+    "type": "homophone"
+  },
+  {
+    "zh": "布爾會",
+    "en": "",
+    "pl": "",
+    "notes": "Homophone alias — Whisper mishears 鉢盂 as 布爾會; alms bowl; unique garble of 鉢盂",
+    "type": "homophone"
   }
 ]
