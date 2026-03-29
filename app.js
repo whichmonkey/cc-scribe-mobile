@@ -92,6 +92,8 @@ let segId         = 0;
 let processingCount = 0;
 let segments      = [];    // All processed segments (for export)
 let sessionId     = null;  // Random UUID per recording session
+let prevSttRaw    = '';    // Previous chunk's cleaned STT text (sliding window)
+let pipelineGate  = Promise.resolve(); // Async mutex for chunk ordering
 
 // Glossary state (loaded on init)
 let glossaryEntries    = [];   // Full glossary array
@@ -624,18 +626,41 @@ async function processChunk(blob) {
   processingCount++;
   updateStatusBadge();
 
+  // Acquire gate synchronously (preserves ondataavailable order)
+  const myGate = pipelineGate;
+  let releaseGate;
+  pipelineGate = new Promise(r => { releaseGate = r; });
+  let released = false;
+  const release = () => { if (!released) { released = true; releaseGate(); } };
+
   try {
-    // 1. Whisper STT
+    await myGate;
+
+    // 1. Whisper STT (inside gate to preserve ordering)
     const rawChinese = await callWhisper(blob);
-    if (!rawChinese) return;
+    if (!rawChinese) { release(); return; }
 
     // 2. Hallucination check
     const cleaned = dedupStt(rawChinese);
-    if (!cleaned) return;
+    if (!cleaned) { release(); return; }
 
-    // 3. Classical Chinese verse correction (pinyin fuzzy match)
-    const matched = (window.PinyinMatcher && PinyinMatcher.isReady())
-      ? PinyinMatcher.matchVerses(cleaned) : cleaned;
+    // 3. Sliding window pinyin matching (prev + current)
+    let matched;
+    if (window.PinyinMatcher && PinyinMatcher.isReady()) {
+      if (prevSttRaw) {
+        const combined = prevSttRaw + cleaned;
+        const corrected = PinyinMatcher.matchVerses(combined);
+        const prevCjk = PinyinMatcher.countCjk(prevSttRaw);
+        [, matched] = PinyinMatcher.splitCorrectedPair(corrected, prevCjk);
+      } else {
+        matched = PinyinMatcher.matchVerses(cleaned);
+      }
+    } else {
+      matched = cleaned;
+    }
+    prevSttRaw = cleaned;
+
+    release(); // Let next chunk proceed — translation runs concurrently
 
     // 4. Glossary homophone correction
     const chinese = correctChinese(matched);
@@ -661,10 +686,11 @@ async function processChunk(blob) {
     // 7. Display
     addSegment(segment);
 
-    // 7. Publish to Supabase (if configured)
+    // 8. Publish to Supabase (if configured)
     publishToSupabase(segment);
 
   } catch (err) {
+    release();
     console.error('Processing error:', err);
     showToast(err.message, true);
   } finally {
@@ -736,6 +762,8 @@ async function startRecording() {
   // Generate session ID (reuse if already created via Share)
   if (!sessionId) sessionId = crypto.randomUUID();
   correctionHits = new Map();
+  prevSttRaw = '';
+  pipelineGate = Promise.resolve();
 
   // Start recording cycle
   startRecorderCycle();
@@ -769,6 +797,7 @@ async function startRecording() {
 
 async function stopRecording() {
   recording = false;
+  prevSttRaw = '';
 
   if (recorder && recorder.state !== 'inactive') recorder.stop();
   if (mediaStream) {
@@ -802,6 +831,7 @@ function clearTranscript() {
   segments = [];
   segId = 0;
   sessionId = null;
+  prevSttRaw = '';
   elapsedSec = 0;
   elapsedEl.textContent = '00:00';
   feed.innerHTML = '';

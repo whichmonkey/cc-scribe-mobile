@@ -255,8 +255,55 @@
    */
   function isReady() { return ready; }
 
+  /**
+   * Count CJK Unified Ideograph characters in text.
+   * @param {string} text
+   * @returns {number}
+   */
+  function countCjk(text) {
+    let n = 0;
+    for (const ch of Array.from(text)) {
+      if (isCJK(ch)) n++;
+    }
+    return n;
+  }
+
+  /**
+   * Split corrected combined text back into prev and current portions.
+   *
+   * matchVerses() preserves CJK character count (each W-char verse replaces
+   * exactly W CJK chars). This lets us split corrected prev+current text at
+   * the original boundary by counting CJK chars.
+   *
+   * @param {string} corrected  Combined corrected text
+   * @param {number} prevCjkCount  Number of CJK chars in the prev portion
+   * @returns {[string, string]}  [prevPortion, currentPortion]
+   */
+  function splitCorrectedPair(corrected, prevCjkCount) {
+    if (prevCjkCount <= 0) return ['', corrected];
+
+    const chars = Array.from(corrected);
+    let cjkSeen = 0;
+    for (let i = 0; i < chars.length; i++) {
+      if (isCJK(chars[i])) {
+        cjkSeen++;
+        if (cjkSeen === prevCjkCount) {
+          const splitIdx = chars.slice(0, i + 1).join('').length;
+          return [corrected.slice(0, splitIdx), corrected.slice(splitIdx)];
+        }
+      }
+    }
+    return [corrected, ''];
+  }
+
   // -- Expose ------------------------------------------------------------------
 
-  window.PinyinMatcher = { init: init, matchVerses: matchVerses, isReady: isReady };
+  window.PinyinMatcher = {
+    init: init,
+    matchVerses: matchVerses,
+    isReady: isReady,
+    countCjk: countCjk,
+    splitCorrectedPair: splitCorrectedPair,
+  };
 
 })();
