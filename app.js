@@ -8,6 +8,8 @@
 
 'use strict';
 
+const APP_VERSION = '0.4.0-c1065d0';
+
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
@@ -63,6 +65,7 @@ const livePl = document.getElementById('live-pl');
 // Advanced settings
 const advancedToggle = document.getElementById('advanced-toggle');
 const advancedBody   = document.getElementById('advanced-body');
+document.getElementById('app-version').textContent = 'v' + APP_VERSION;
 
 // Settings inputs
 const openaiKeyInput    = document.getElementById('openai-key');
