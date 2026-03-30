@@ -8,13 +8,13 @@
 
 'use strict';
 
-const APP_VERSION = '0.5.0-488e485';
+const APP_VERSION = '0.6.0';
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
-const CHUNK_INTERVAL  = 8000;   // 8-second MediaRecorder cycle
+const CHUNK_INTERVAL  = 10000;  // 10-second MediaRecorder cycle
 const WHISPER_MODEL   = 'whisper-1';
 const CLAUDE_MODEL    = 'claude-haiku-4-5-20251001';
 const ANTHROPIC_VERSION = '2023-06-01';
