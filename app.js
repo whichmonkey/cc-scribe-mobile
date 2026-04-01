@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.1';
+const APP_VERSION = '0.6.2';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -19,14 +19,18 @@ const WHISPER_MODEL   = 'whisper-1';
 const CLAUDE_MODEL    = 'claude-haiku-4-5-20251001';
 const ANTHROPIC_VERSION = '2023-06-01';
 
+// Block list: if matched, entire segment is dropped (whole chunk is junk).
+// For generic phrases that should be stripped but keep the rest, use
+// "type": "hallucination" entries in glossary.json instead.
 const HALLUCINATION_BLOCKLIST = [
   'subtitles', 'amara.org', 'subscribe', 'like and subscribe',
   'thank you for watching', 'thanks for watching', 'please subscribe',
   '字幕由', '字幕提供', '感谢观看', '请订阅', '謝謝觀看', '請訂閱',
   'ming pao', '明報', '明报',
-  '多謝您收睇', '多谢您收睇', '時局新聞', '时局新闻', '收睇',
-  '多謝您', '多谢您', '再會', '再会',
-  '點贊', '点赞', '訂閱', '订阅', '打賞', '打赏',
+  '多謝您收睇', '多谢您收睇', '時局新聞', '时局新闻',
+  '本期視頻', '本期视频', '下次節目', '下次节目',
+  '下次節目再見', '下次节目再见',
+  '人類的持續戰鬥', '人类的持续战斗', '機械體系', '机械体系',
 ];
 
 // ---------------------------------------------------------------------------
@@ -441,6 +445,14 @@ function buildZhCorrections() {
   }
 
   zhCorrections = [];
+
+  // Hallucination entries → replace with empty string
+  for (const e of glossaryEntries) {
+    if (e.type === 'hallucination') {
+      zhCorrections.push({ wrong: e.zh, correct: '' });
+    }
+  }
+
   for (const alias of aliases) {
     // Try parsing correct ZH from notes
     const m = zhPattern.exec(alias.notes);
@@ -518,6 +530,17 @@ function dedupStt(text) {
   const lower = text.toLowerCase().trim();
   for (const phrase of HALLUCINATION_BLOCKLIST) {
     if (lower.includes(phrase)) return '';
+  }
+
+  // Detect repeated phrases (hallucination signature from silence).
+  // Extract CJK runs of 4+ chars and flag if any repeats 3+ times.
+  const cjkRuns = lower.match(/[\u4e00-\u9fff]{4,}/g);
+  if (cjkRuns) {
+    const counts = {};
+    for (const run of cjkRuns) {
+      counts[run] = (counts[run] || 0) + 1;
+      if (counts[run] >= 3) return '';
+    }
   }
 
   return text.trim();

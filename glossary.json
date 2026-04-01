@@ -1,5 +1,131 @@
 [
   {
+    "zh": "拜拜",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — YouTube-style sign-off",
+    "type": "hallucination"
+  },
+  {
+    "zh": "多謝您",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — Cantonese thank-you (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "多谢您",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — Cantonese thank-you (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "再會",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — goodbye (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "再会",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — goodbye (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "點贊",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — like/thumbs-up (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "点赞",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — like/thumbs-up (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "訂閱",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — subscribe (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "订阅",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — subscribe (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "打賞",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — tip/donate (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "打赏",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — tip/donate (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "收睇",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — Cantonese watch/view",
+    "type": "hallucination"
+  },
+  {
+    "zh": "多多支持",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — please support us",
+    "type": "hallucination"
+  },
+  {
+    "zh": "下次再見",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — see you next time (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "下次再见",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — see you next time (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "節目再見",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — show goodbye (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "节目再见",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — show goodbye (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "有什麼看法",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — generic filler question",
+    "type": "hallucination"
+  },
+  {
     "zh": "般若波罗蜜多",
     "en": "prajñā-pāramitā (perfection of wisdom)",
     "pl": "prajñā-pāramitā (doskonałość mądrości)",
