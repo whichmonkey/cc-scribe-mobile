@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.2';
+const APP_VERSION = '0.6.3';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -31,6 +31,7 @@ const HALLUCINATION_BLOCKLIST = [
   '本期視頻', '本期视频', '下次節目', '下次节目',
   '下次節目再見', '下次节目再见',
   '人類的持續戰鬥', '人类的持续战斗', '機械體系', '机械体系',
+  '數が', '支持明镜', '点点栏目',
 ];
 
 // ---------------------------------------------------------------------------
@@ -92,6 +93,7 @@ let levelCtx      = null;
 let analyser      = null;
 let isAtBottom    = true;
 let wakeLock      = null;
+let wakeLockVisHandler = null;
 let segId         = 0;
 let processingCount = 0;
 let segments      = [];    // All processed segments (for export)
@@ -809,9 +811,17 @@ async function startRecording() {
     elapsedEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   }, 1000);
 
-  // Wake lock
+  // Wake lock — re-acquire on visibility change (browser releases it when page is hidden)
   if ('wakeLock' in navigator) {
-    navigator.wakeLock.request('screen').then(l => { wakeLock = l; }).catch(() => {});
+    const acquireWakeLock = () => {
+      if (!recording) return;
+      navigator.wakeLock.request('screen').then(l => { wakeLock = l; }).catch(() => {});
+    };
+    acquireWakeLock();
+    wakeLockVisHandler = () => {
+      if (document.visibilityState === 'visible') acquireWakeLock();
+    };
+    document.addEventListener('visibilitychange', wakeLockVisHandler);
   }
 
   // Level meter
@@ -834,6 +844,10 @@ async function stopRecording() {
   }
   clearInterval(elapsedTimer);
   if (wakeLock) { wakeLock.release(); wakeLock = null; }
+  if (wakeLockVisHandler) {
+    document.removeEventListener('visibilitychange', wakeLockVisHandler);
+    wakeLockVisHandler = null;
+  }
 
   // Upload transcript and correction stats to Supabase
   uploadTranscript();
