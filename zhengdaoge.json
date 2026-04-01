@@ -1373,5 +1373,235 @@
     "zh": "如淨琉璃含寶月",
     "en": "like pure crystal containing the jewel moon",
     "pl": ""
+  },
+  {
+    "zh": "定是慧體",
+    "en": "Concentration is the essence of wisdom",
+    "pl": "Skupienie jest istotą mądrości"
+  },
+  {
+    "zh": "慧是定用",
+    "en": "Wisdom is the function of concentration",
+    "pl": "Mądrość jest funkcją skupienia"
+  },
+  {
+    "zh": "即慧之時定在慧",
+    "en": "When wisdom is active, concentration is within wisdom",
+    "pl": "Gdy mądrość jest aktywna, skupienie jest w mądrości"
+  },
+  {
+    "zh": "即定之時慧在定",
+    "en": "When concentration is active, wisdom is within concentration",
+    "pl": "Gdy skupienie jest aktywne, mądrość jest w skupieniu"
+  },
+  {
+    "zh": "猶如燈光",
+    "en": "Just like a lamp and its light",
+    "pl": "Jak lampa i jej światło"
+  },
+  {
+    "zh": "有燈即光",
+    "en": "Where there is a lamp there is light",
+    "pl": "Gdzie jest lampa, tam jest światło"
+  },
+  {
+    "zh": "無燈即闇",
+    "en": "Without a lamp there is darkness",
+    "pl": "Bez lampy jest ciemność"
+  },
+  {
+    "zh": "燈是光之體",
+    "en": "The lamp is the essence of light",
+    "pl": "Lampa jest istotą światła"
+  },
+  {
+    "zh": "光是燈之用",
+    "en": "Light is the function of the lamp",
+    "pl": "Światło jest funkcją lampy"
+  },
+  {
+    "zh": "外離相即禪",
+    "en": "Outwardly detaching from forms is Chan",
+    "pl": "Zewnętrzne oderwanie od form to Chan"
+  },
+  {
+    "zh": "內不亂即定",
+    "en": "Inwardly being undisturbed is concentration",
+    "pl": "Wewnętrzny brak zaburzeń to skupienie"
+  },
+  {
+    "zh": "外禪內定",
+    "en": "Outward Chan, inward concentration",
+    "pl": "Zewnętrzny Chan, wewnętrzne skupienie"
+  },
+  {
+    "zh": "是為禪定",
+    "en": "This is Chan concentration",
+    "pl": "To jest skupienie Chan"
+  },
+  {
+    "zh": "外於一切善惡境界",
+    "en": "Outwardly, in all realms of good and evil",
+    "pl": "Na zewnątrz, we wszystkich sferach dobra i zła"
+  },
+  {
+    "zh": "心念不起名為坐",
+    "en": "When thoughts do not arise, this is called sitting",
+    "pl": "Gdy myśli nie powstają, nazywa się to siedzeniem"
+  },
+  {
+    "zh": "內見自性不動名為禪",
+    "en": "Inwardly seeing self-nature unmoving is called Chan",
+    "pl": "Wewnętrznie widząc własną naturę nieruchomą, to nazywa się Chan"
+  },
+  {
+    "zh": "凡夫即佛",
+    "en": "The ordinary person is Buddha",
+    "pl": "Zwykły człowiek jest Buddą"
+  },
+  {
+    "zh": "煩惱即菩提",
+    "en": "Afflictions are bodhi",
+    "pl": "Udręki są bodhi"
+  },
+  {
+    "zh": "前念迷即凡夫",
+    "en": "The previous thought deluded is an ordinary person",
+    "pl": "Poprzednia myśl w złudzeniu to zwykły człowiek"
+  },
+  {
+    "zh": "後念悟即佛",
+    "en": "The next thought awakened is Buddha",
+    "pl": "Następna myśl przebudzona to Budda"
+  },
+  {
+    "zh": "一切般若智",
+    "en": "All prajna wisdom",
+    "pl": "Cała mądrość prajni"
+  },
+  {
+    "zh": "皆從自性而生",
+    "en": "All arises from self-nature",
+    "pl": "Wszystko powstaje z własnej natury"
+  },
+  {
+    "zh": "不從外入",
+    "en": "Not from outside",
+    "pl": "Nie z zewnątrz"
+  },
+  {
+    "zh": "菩提般若之智",
+    "en": "The wisdom of bodhi-prajna",
+    "pl": "Mądrość bodhi-prajni"
+  },
+  {
+    "zh": "世人本自有之",
+    "en": "All people originally possess it",
+    "pl": "Wszyscy ludzie pierwotnie ją posiadają"
+  },
+  {
+    "zh": "只緣心迷",
+    "en": "Only because the mind is deluded",
+    "pl": "Tylko dlatego, że umysł jest w złudzeniu"
+  },
+  {
+    "zh": "不能自悟",
+    "en": "One cannot awaken by oneself",
+    "pl": "Nie można się samemu przebudzić"
+  },
+  {
+    "zh": "無念為宗",
+    "en": "No-thought as the principle",
+    "pl": "Bezmyślność jako zasada"
+  },
+  {
+    "zh": "無相為體",
+    "en": "No-form as the essence",
+    "pl": "Bezforemność jako istota"
+  },
+  {
+    "zh": "無住為本",
+    "en": "Non-abiding as the foundation",
+    "pl": "Nieprzywiązanie jako fundament"
+  },
+  {
+    "zh": "無相者於相而離相",
+    "en": "No-form means to be amid forms yet detached from forms",
+    "pl": "Bezforemność to bycie pośród form, lecz oderwanie od form"
+  },
+  {
+    "zh": "無念者於念而無念",
+    "en": "No-thought means to be amid thoughts yet free of thoughts",
+    "pl": "Bezmyślność to bycie pośród myśli, lecz wolność od myśli"
+  },
+  {
+    "zh": "佛法在世間",
+    "en": "The Buddha-dharma is in the world",
+    "pl": "Dharma Buddy jest na świecie"
+  },
+  {
+    "zh": "不離世間覺",
+    "en": "Awakening is not apart from the world",
+    "pl": "Przebudzenie nie jest oddzielone od świata"
+  },
+  {
+    "zh": "離世覓菩提",
+    "en": "To seek bodhi apart from this world",
+    "pl": "Szukać bodhi z dala od tego świata"
+  },
+  {
+    "zh": "恰如求兔角",
+    "en": "Is like seeking rabbit horns",
+    "pl": "Jest jak szukanie rogów u królika"
+  },
+  {
+    "zh": "菩提本自性",
+    "en": "Bodhi is originally self-nature",
+    "pl": "Bodhi jest pierwotnie własną naturą"
+  },
+  {
+    "zh": "起心即是妄",
+    "en": "Arousing the mind is delusion",
+    "pl": "Pobudzanie umysłu to złudzenie"
+  },
+  {
+    "zh": "淨心在妄中",
+    "en": "The pure mind is within delusion",
+    "pl": "Czysty umysł jest w złudzeniu"
+  },
+  {
+    "zh": "但正無三障",
+    "en": "Just correct it and the three obstacles vanish",
+    "pl": "Wystarczy to skorygować, a trzy przeszkody znikną"
+  },
+  {
+    "zh": "法即無頓漸",
+    "en": "The Dharma has no sudden or gradual",
+    "pl": "Dharma nie ma nagłego ani stopniowego"
+  },
+  {
+    "zh": "迷悟有遲疾",
+    "en": "Delusion and awakening differ in speed",
+    "pl": "Złudzenie i przebudzenie różnią się szybkością"
+  },
+  {
+    "zh": "自性能含萬法是大",
+    "en": "Self-nature can contain all dharmas—this is great",
+    "pl": "Własna natura może zawierać wszystkie dharmy — to jest wielkie"
+  },
+  {
+    "zh": "萬法在諸人性中",
+    "en": "All dharmas are within everyone's nature",
+    "pl": "Wszystkie dharmy są w naturze każdego człowieka"
+  },
+  {
+    "zh": "心量廣大",
+    "en": "The capacity of mind is vast",
+    "pl": "Pojemność umysłu jest rozległa"
+  },
+  {
+    "zh": "猶如虛空",
+    "en": "Like empty space",
+    "pl": "Jak pusta przestrzeń"
   }
 ]
