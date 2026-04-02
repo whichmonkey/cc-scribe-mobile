@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.3';
+const APP_VERSION = '0.6.5';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -32,6 +32,18 @@ const HALLUCINATION_BLOCKLIST = [
   '下次節目再見', '下次节目再见',
   '人類的持續戰鬥', '人类的持续战斗', '機械體系', '机械体系',
   '數が', '支持明镜', '点点栏目',
+  '李宗盛', '字幕組', '字幕组', '中文字幕製作', '中文字幕制作',
+  '3 2 1 出发', '5 4 3 2 1 好', '五 四 三 二 一',
+  '优优独播剧场', 'yoyo television',
+  '別忘了分享出去', '别忘了分享出去', '記得我們的頻道', '记得我们的频道',
+  '感谢粉丝们', '感謝粉絲們', '咱们下期再见', '咱們下期再見',
+  '以上言論不代表本台立場', '以上言论不代表本台立场',
+  '放入冰箱冷藏', '字幕by', '╰╯',
+  '時尚高潮', '时尚高潮', '了解更多',
+  'yixi.tv', '今天就講到這裡', '今天就讲到这里',
+  '把火箭炸了', '阿特曼斯', 'allstate program',
+  'this sounds like a question', "where's the blast off",
+  'みんなで監督', '收到最新消息',
 ];
 
 // ---------------------------------------------------------------------------
@@ -48,7 +60,6 @@ const feed          = document.getElementById('feed');
 const statusBadge   = document.getElementById('status-badge');
 const shareBtn      = document.getElementById('share-btn');
 const clearBtn      = document.getElementById('clear-btn');
-const saveBtn       = document.getElementById('save-btn');
 const settingsBtn   = document.getElementById('settings-btn');
 const settingsPanel = document.getElementById('settings-panel');
 const settingsOverlay = document.getElementById('settings-overlay');
@@ -101,6 +112,11 @@ let sessionId     = null;  // Random UUID per recording session
 let prevSttRaw    = '';    // Previous chunk's cleaned STT text (sliding window)
 let pipelineGate  = Promise.resolve(); // Async mutex for chunk ordering
 
+// Audio recording (save full session audio for download)
+let recordedChunks = [];
+let recordingMimeType = '';
+let sessionStartSegIdx = 0;  // Index into segments[] where current recording began
+
 // Glossary state (loaded on init)
 let glossaryEntries    = [];   // Full glossary array
 let zhCorrections      = [];   // [{wrong, correct}] for homophone fixes
@@ -148,7 +164,6 @@ function restoreSession() {
 
     // Enable buttons
     clearBtn.disabled = false;
-    saveBtn.disabled = false;
   } catch (e) {
     console.error('Failed to restore session:', e);
   }
@@ -729,17 +744,18 @@ async function processChunk(blob) {
 // ---------------------------------------------------------------------------
 
 function createRecorder() {
-  mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
-    ? 'audio/webm;codecs=opus'
-    : MediaRecorder.isTypeSupported('audio/mp4')
-      ? 'audio/mp4'
+  mimeType = MediaRecorder.isTypeSupported('audio/mp4')
+    ? 'audio/mp4'
+    : MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+      ? 'audio/webm;codecs=opus'
       : 'audio/webm';
+  recordingMimeType = mimeType;
 
   const rec = new MediaRecorder(mediaStream, { mimeType });
 
   rec.ondataavailable = (ev) => {
     if (ev.data.size > 0 && recording) {
-      // Fire-and-forget: process concurrently
+      recordedChunks.push(ev.data);
       processChunk(ev.data);
     }
   };
@@ -789,6 +805,8 @@ async function startRecording() {
   correctionHits = new Map();
   prevSttRaw = '';
   pipelineGate = Promise.resolve();
+  recordedChunks = [];
+  sessionStartSegIdx = segments.length;
 
   // Start recording cycle
   startRecorderCycle();
@@ -798,7 +816,6 @@ async function startRecording() {
   recBtn.classList.add('recording');
   recLabel.textContent = 'STOP';
   clearBtn.disabled = true;
-  saveBtn.disabled = true;
   shareBtn.disabled = false;
 
   // Elapsed timer
@@ -849,6 +866,9 @@ async function stopRecording() {
     wakeLockVisHandler = null;
   }
 
+  // Save audio recording + transcript
+  saveSession();
+
   // Upload transcript and correction stats to Supabase
   uploadTranscript();
   uploadCorrectionStats();
@@ -857,8 +877,55 @@ async function stopRecording() {
   recBtn.classList.remove('recording');
   recLabel.textContent = 'START';
   clearBtn.disabled = segments.length === 0;
-  saveBtn.disabled = segments.length === 0;
   levelFill.style.width = '0%';
+}
+
+function saveSession() {
+  const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const saved = [];
+
+  // Save audio recording
+  if (recordedChunks.length > 0) {
+    const blob = new Blob(recordedChunks, { type: recordingMimeType });
+    const ext = recordingMimeType.includes('mp4') ? 'mp4' : 'webm';
+    const audioFile = `session_${ts}.${ext}`;
+    downloadBlob(blob, audioFile);
+    saved.push(audioFile);
+    recordedChunks = [];
+  }
+
+  // Save transcript (only segments from this recording session)
+  const sessionSegments = segments.slice(sessionStartSegIdx);
+  if (sessionSegments.length > 0) {
+    const lines = [];
+    for (const seg of sessionSegments) {
+      const m = Math.floor((seg.start_time || 0) / 60);
+      const s = Math.floor((seg.start_time || 0) % 60);
+      const stamp = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      lines.push(`[${stamp}]`);
+      if (seg.chinese) lines.push(`ZH: ${seg.chinese}`);
+      if (seg.english) lines.push(`EN: ${seg.english}`);
+      if (seg.polish)  lines.push(`PL: ${seg.polish}`);
+      lines.push('');
+    }
+    const textBlob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+    const textFile = `session_${ts}.txt`;
+    downloadBlob(textBlob, textFile);
+    saved.push(textFile);
+  }
+
+  if (saved.length > 0) {
+    showToast(`Saved: ${saved.join(' + ')}`);
+  }
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 function clearTranscript() {
@@ -881,7 +948,6 @@ function clearTranscript() {
 
   // UI
   clearBtn.disabled = true;
-  saveBtn.disabled = true;
 }
 
 // ---------------------------------------------------------------------------
@@ -1122,33 +1188,6 @@ function shareSession() {
 // Save / Export
 // ---------------------------------------------------------------------------
 
-function saveTranscript() {
-  if (segments.length === 0) {
-    showToast('No transcript to save');
-    return;
-  }
-
-  const lines = [];
-  for (const seg of segments) {
-    const m = Math.floor((seg.start_time || 0) / 60);
-    const s = Math.floor((seg.start_time || 0) % 60);
-    const ts = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-    lines.push(`[${ts}]`);
-    if (seg.chinese) lines.push(`ZH: ${seg.chinese}`);
-    if (seg.english) lines.push(`EN: ${seg.english}`);
-    if (seg.polish)  lines.push(`PL: ${seg.polish}`);
-    lines.push('');
-  }
-
-  const text = lines.join('\n');
-  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `cc_scribe_${new Date().toISOString().slice(0, 16).replace(/[:-]/g, '')}.txt`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
 
 // ---------------------------------------------------------------------------
 // UI helpers
@@ -1230,7 +1269,6 @@ recBtn.addEventListener('click', () => {
 
 clearBtn.addEventListener('click', clearTranscript);
 shareBtn.addEventListener('click', shareSession);
-saveBtn.addEventListener('click', saveTranscript);
 settingsBtn.addEventListener('click', openSettings);
 settingsClose.addEventListener('click', closeSettings);
 settingsOverlay.addEventListener('click', closeSettings);
