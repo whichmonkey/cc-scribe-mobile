@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.5';
+const APP_VERSION = '0.6.6';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -112,8 +112,9 @@ let sessionId     = null;  // Random UUID per recording session
 let prevSttRaw    = '';    // Previous chunk's cleaned STT text (sliding window)
 let pipelineGate  = Promise.resolve(); // Async mutex for chunk ordering
 
-// Audio recording (save full session audio for download)
-let recordedChunks = [];
+// Audio recording (continuous recorder — separate from transcription cycle)
+let fullRecorder = null;
+let fullChunks = [];
 let recordingMimeType = '';
 let sessionStartSegIdx = 0;  // Index into segments[] where current recording began
 
@@ -749,13 +750,11 @@ function createRecorder() {
     : MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
       ? 'audio/webm;codecs=opus'
       : 'audio/webm';
-  recordingMimeType = mimeType;
 
   const rec = new MediaRecorder(mediaStream, { mimeType });
 
   rec.ondataavailable = (ev) => {
     if (ev.data.size > 0 && recording) {
-      recordedChunks.push(ev.data);
       processChunk(ev.data);
     }
   };
@@ -805,10 +804,22 @@ async function startRecording() {
   correctionHits = new Map();
   prevSttRaw = '';
   pipelineGate = Promise.resolve();
-  recordedChunks = [];
   sessionStartSegIdx = segments.length;
 
-  // Start recording cycle
+  // Start continuous audio recorder (separate from transcription cycle)
+  recordingMimeType = MediaRecorder.isTypeSupported('audio/mp4')
+    ? 'audio/mp4'
+    : MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+      ? 'audio/webm;codecs=opus'
+      : 'audio/webm';
+  fullChunks = [];
+  fullRecorder = new MediaRecorder(mediaStream, { mimeType: recordingMimeType });
+  fullRecorder.ondataavailable = (ev) => {
+    if (ev.data.size > 0) fullChunks.push(ev.data);
+  };
+  fullRecorder.start();
+
+  // Start transcription recording cycle
   startRecorderCycle();
   recording = true;
 
@@ -850,6 +861,19 @@ async function stopRecording() {
   prevSttRaw = '';
 
   if (recorder && recorder.state !== 'inactive') recorder.stop();
+
+  // Stop continuous recorder — onstop fires after final ondataavailable
+  if (fullRecorder && fullRecorder.state !== 'inactive') {
+    fullRecorder.onstop = () => {
+      if (fullChunks.length > 0) saveSession();
+      fullRecorder = null;
+    };
+    fullRecorder.stop();
+  } else {
+    // No audio chunks but still save transcript if segments exist
+    saveSession();
+  }
+
   if (mediaStream) {
     mediaStream.getTracks().forEach(t => t.stop());
     mediaStream = null;
@@ -865,9 +889,6 @@ async function stopRecording() {
     document.removeEventListener('visibilitychange', wakeLockVisHandler);
     wakeLockVisHandler = null;
   }
-
-  // Save audio recording + transcript
-  saveSession();
 
   // Upload transcript and correction stats to Supabase
   uploadTranscript();
@@ -885,13 +906,13 @@ function saveSession() {
   const saved = [];
 
   // Save audio recording
-  if (recordedChunks.length > 0) {
-    const blob = new Blob(recordedChunks, { type: recordingMimeType });
+  if (fullChunks.length > 0) {
+    const blob = new Blob(fullChunks, { type: recordingMimeType });
     const ext = recordingMimeType.includes('mp4') ? 'mp4' : 'webm';
     const audioFile = `session_${ts}.${ext}`;
     downloadBlob(blob, audioFile);
     saved.push(audioFile);
-    recordedChunks = [];
+    fullChunks = [];
   }
 
   // Save transcript (only segments from this recording session)
