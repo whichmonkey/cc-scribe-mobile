@@ -1,5 +1,40 @@
 [
   {
+    "zh": "下次見",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — see you next time (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "下次见",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — see you next time (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "謝謝大家",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — thanks everyone (trad)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "谢谢大家",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — thanks everyone (simp)",
+    "type": "hallucination"
+  },
+  {
+    "zh": "哼哼",
+    "en": "",
+    "pl": "",
+    "notes": "Whisper silence hallucination — filler sound",
+    "type": "hallucination"
+  },
+  {
     "zh": "拜拜",
     "en": "",
     "pl": "",
