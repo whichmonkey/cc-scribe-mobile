@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.6';
+const APP_VERSION = '0.6.7';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -239,6 +239,26 @@ async function decryptConfig(payload, pin) {
 }
 
 // ---------------------------------------------------------------------------
+// In-app browser detection (iOS SFSafariViewController, Android WebView, etc.)
+// ---------------------------------------------------------------------------
+
+function isInAppBrowser() {
+  const ua = navigator.userAgent || '';
+  // iOS: SFSafariViewController shares Safari's UA but lacks 'Safari/' token when
+  // opened from apps that use WKWebView, or we can detect the navigation bar context.
+  // Common heuristic: standalone Safari has 'Safari/' in UA; many in-app contexts don't.
+  const isIos = /iPhone|iPad|iPod/.test(ua);
+  const hasFullSafari = /Safari\//.test(ua) && !/CriOS|FxiOS|OPiOS/.test(ua);
+  // In-app browsers on iOS often have the WebKit engine string but lack 'Safari/'
+  if (isIos && /AppleWebKit/.test(ua) && !hasFullSafari) return true;
+  // Android WebView detection
+  if (/wv|\.0\.0\.0/.test(ua) && /Android/.test(ua)) return true;
+  // Facebook, Instagram, Line, WhatsApp in-app browsers identify themselves
+  if (/FBAN|FBAV|Instagram|Line|WhatsApp/.test(ua)) return true;
+  return false;
+}
+
+// ---------------------------------------------------------------------------
 // PIN dialog
 // ---------------------------------------------------------------------------
 
@@ -346,7 +366,7 @@ shareConfigBtn.addEventListener('click', async () => {
 async function handleConfigImport(payload) {
   if (!window.crypto || !crypto.subtle) {
     showToast('HTTPS required for decryption', true);
-    return;
+    return false;
   }
 
   while (true) {
@@ -354,23 +374,45 @@ async function handleConfigImport(payload) {
       'Enter PIN',
       'Enter the PIN you received to unlock the configuration.'
     );
-    if (!pin) return; // cancelled
+    if (!pin) return false; // cancelled
 
+    let config;
     try {
-      const config = await decryptConfig(payload, pin);
-      if (config.o) localStorage.setItem('ccscribe_openai_key', config.o);
-      if (config.a) localStorage.setItem('ccscribe_anthropic_key', config.a);
-      if (config.w) localStorage.setItem('ccscribe_worker_url', config.w);
-      loadSettings();
-      showToast('Configuration loaded successfully!');
-      return;
+      config = await decryptConfig(payload, pin);
     } catch {
-      // Wrong PIN — show error inline, loop to retry
+      // Wrong PIN or corrupted — show error inline, loop to retry
       pinError.textContent = 'Wrong PIN or corrupted data. Try again.';
       pinError.classList.remove('hidden');
       pinOverlay.classList.remove('hidden');
       pinDialog.classList.remove('hidden');
+      continue;
     }
+
+    // Decryption succeeded — apply keys directly to input fields first
+    // (works even if localStorage is unavailable, e.g. iOS in-app browsers)
+    if (config.o) openaiKeyInput.value = config.o;
+    if (config.a) anthropicKeyInput.value = config.a;
+    if (config.w) workerUrlInput.value = config.w;
+
+    // Try persisting to localStorage for future sessions
+    let persisted = false;
+    try {
+      if (config.o) localStorage.setItem('ccscribe_openai_key', config.o);
+      if (config.a) localStorage.setItem('ccscribe_anthropic_key', config.a);
+      if (config.w) localStorage.setItem('ccscribe_worker_url', config.w);
+      persisted = true;
+    } catch (e) {
+      console.warn('localStorage unavailable — config loaded for this session only:', e);
+    }
+
+    if (persisted && isInAppBrowser()) {
+      showToast('Config loaded! Open in Safari (tap \u2197 icon) to keep it permanently.');
+    } else if (!persisted) {
+      showToast('Config loaded for this session only. Open link in Safari to save permanently.', true);
+    } else {
+      showToast('Configuration loaded successfully!');
+    }
+    return true;
   }
 }
 
@@ -1330,8 +1372,12 @@ async function init() {
   // Check for encrypted config in URL hash
   if (location.hash.startsWith('#config=')) {
     const payload = location.hash.slice('#config='.length);
-    history.replaceState(null, '', location.pathname + location.search);
-    await handleConfigImport(payload);
+    const imported = await handleConfigImport(payload);
+    // Only strip hash after successful import — if cancelled or failed,
+    // keep it so the user can re-open in Safari and try again
+    if (imported) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
   }
 
   // Check for audience mode

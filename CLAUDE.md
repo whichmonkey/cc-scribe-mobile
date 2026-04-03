@@ -2,11 +2,26 @@
 
 Real-time Buddhist dharma talk transcription and translation PWA.
 
+## Sibling Repo: CC Scribe (Desktop)
+
+This app mirrors the algorithm of the Python desktop app (`CC Scribe`). The processing pipeline
+(hallucination filter, pinyin verse matching, glossary homophone correction, translation) is
+logically identical across both repos, optimized over many A/B tests. When an algorithm is
+updated in one repo, the equivalent change MUST be ported to the other.
+
+Key differences from the desktop version:
+- **Runtime**: vanilla JS (browser) vs Python (local GPU)
+- **STT**: cloud OpenAI Whisper API vs local stable-ts/faster-whisper
+- **Translation**: Claude Haiku API vs NLLB-200/OPUS-MT/Argos local models (or Claude)
+- **Chunking**: fixed 10s MediaRecorder intervals vs VAD-driven segments (max 30s)
+- **Sliding window**: concatenates prev+current chunk text for cross-boundary matching;
+  desktop uses 2-segment lookahead via VAD segments — same goal, different mechanism
+
 ## Architecture
 
 Zero-build vanilla JS app. No bundler, no package.json. Dev server: `python -m http.server 8656`.
 
-## Processing Pipeline (per 3s audio chunk)
+## Processing Pipeline (per 10s audio chunk)
 
 Chunks are ordered by an async mutex (`pipelineGate`) through steps 1-3; translation (step 5) runs concurrently.
 
@@ -78,3 +93,14 @@ Beyond 10s, sliding window adds no value (verses don't span boundaries). Current
 ## Version
 
 Update version number in `app.js` (`APP_VERSION`) before every push.
+
+## Constraints — Do NOT
+
+- **Do not add a bundler, package.json, or build step.** This is a zero-build vanilla JS app by design. All dependencies are pre-bundled in `lib/`.
+- **Do not convert IIFE modules to ES modules.** `pinyin_matcher.js` is an IIFE that exposes globals. Do not refactor it into `import`/`export` — the app has no module loader.
+- **Do not add npm dependencies.** If a library is needed, vendor a pre-built copy into `lib/`.
+- **Do not use TypeScript.** The entire app is plain JS.
+- **Do not change the glossary.json schema** without coordinating with the desktop repo — both repos consume the same format.
+- **Do not change the Levenshtein thresholds or matching algorithm** without A/B testing and porting the change to the desktop repo's `pinyin_matcher.py`.
+- **Do not remove or weaken the hallucination blocklist.** Entries exist because they appeared in real transcription runs. Add to it, don't subtract.
+- **Do not skip the version bump.** Every push must increment `APP_VERSION` in `app.js`.
