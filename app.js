@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.9';
+const APP_VERSION = '0.6.10';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -392,13 +392,19 @@ async function handleConfigImport(payload) {
     // DEBUG: show what we got (remove after debugging)
     const got = [config.o ? 'O' : '-', config.a ? 'A' : '-', config.w ? 'W' : '-'].join('');
     console.log('[config-import] decrypted keys:', got);
-    alert('Decrypt OK: keys=' + got + ' inApp=' + isInAppBrowser());
+    alert('Decrypt OK: keys=' + got + ' w=' + (config.w || '(empty)') + ' type=' + workerUrlInput.type);
 
     // Decryption succeeded — apply keys directly to input fields first
     // (works even if localStorage is unavailable, e.g. iOS in-app browsers)
     if (config.o) openaiKeyInput.value = config.o;
     if (config.a) anthropicKeyInput.value = config.a;
-    if (config.w) workerUrlInput.value = config.w;
+    if (config.w) {
+      // iOS Safari can reject .value on type="url" inputs — use type="text" as workaround
+      const origType = workerUrlInput.type;
+      workerUrlInput.type = 'text';
+      workerUrlInput.value = config.w;
+      workerUrlInput.type = origType;
+    }
 
     // Try persisting to localStorage for future sessions
     let persisted = false;
