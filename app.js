@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.8';
+const APP_VERSION = '0.6.9';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -1370,6 +1370,9 @@ advancedToggle.addEventListener('click', () => {
 // ---------------------------------------------------------------------------
 
 async function init() {
+  // DEBUG: very first thing — check what URL we actually have
+  alert('init() hash: ' + location.hash.substring(0, 60) + (location.hash.length > 60 ? '…' : ''));
+
   loadSettings();
   restoreSession();
   await loadGlossary();
