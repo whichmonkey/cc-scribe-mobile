@@ -947,16 +947,33 @@ async function stopRecording() {
   levelFill.style.width = '0%';
 }
 
-function saveSession() {
+async function saveSession() {
   const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
 
-  // Save audio recording (only auto-download — iOS blocks multiple blob downloads)
+  // Save audio recording
   if (fullChunks.length > 0) {
     const blob = new Blob(fullChunks, { type: recordingMimeType });
     const ext = recordingMimeType.includes('mp4') ? 'mp4' : 'webm';
     const audioFile = `session_${ts}.${ext}`;
-    downloadBlob(blob, audioFile);
-    showToast(`Saved: ${audioFile}`);
+    const file = new File([blob], audioFile, { type: recordingMimeType });
+
+    // Use Web Share API on mobile (native share sheet on iOS/Android)
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: 'CC Scribe Audio' });
+        showToast(`Audio shared: ${audioFile}`);
+      } catch (e) {
+        if (e.name !== 'AbortError') {
+          // Share failed for non-cancel reason — fall back to download
+          downloadBlob(blob, audioFile);
+          showToast(`Saved: ${audioFile}`);
+        }
+      }
+    } else {
+      // Desktop fallback
+      downloadBlob(blob, audioFile);
+      showToast(`Saved: ${audioFile}`);
+    }
     fullChunks = [];
   }
 
