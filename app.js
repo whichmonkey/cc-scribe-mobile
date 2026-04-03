@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.10';
+const APP_VERSION = '0.6.11';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -339,7 +339,7 @@ shareConfigBtn.addEventListener('click', async () => {
 
   try {
     const payload = await encryptConfig({ o, a, w }, pin);
-    const url = `${location.origin}${location.pathname}#config=${payload}`;
+    const url = `${location.origin}${location.pathname}?config=${encodeURIComponent(payload)}`;
 
     let copied = false;
     try { await navigator.clipboard.writeText(url); copied = true; } catch {}
@@ -389,11 +389,6 @@ async function handleConfigImport(payload) {
       continue;
     }
 
-    // DEBUG: show what we got (remove after debugging)
-    const got = [config.o ? 'O' : '-', config.a ? 'A' : '-', config.w ? 'W' : '-'].join('');
-    console.log('[config-import] decrypted keys:', got);
-    alert('Decrypt OK: keys=' + got + ' w=' + (config.w || '(empty)') + ' type=' + workerUrlInput.type);
-
     // Decryption succeeded — apply keys directly to input fields first
     // (works even if localStorage is unavailable, e.g. iOS in-app browsers)
     if (config.o) openaiKeyInput.value = config.o;
@@ -416,14 +411,6 @@ async function handleConfigImport(payload) {
     } catch (e) {
       console.warn('[config-import] localStorage write failed:', e);
     }
-
-    // DEBUG: verify input fields were set (remove after debugging)
-    const verify = [
-      openaiKeyInput.value ? 'O' : '-',
-      anthropicKeyInput.value ? 'A' : '-',
-      workerUrlInput.value ? 'W' : '-'
-    ].join('');
-    alert('Inputs set: ' + verify + ' localStorage: ' + (persisted ? 'OK' : 'FAIL'));
 
     if (persisted && isInAppBrowser()) {
       showToast('Config loaded! Open in Safari (tap \u2197 icon) to keep it permanently.');
@@ -1376,9 +1363,6 @@ advancedToggle.addEventListener('click', () => {
 // ---------------------------------------------------------------------------
 
 async function init() {
-  // DEBUG: very first thing — check what URL we actually have
-  alert('init() hash: ' + location.hash.substring(0, 60) + (location.hash.length > 60 ? '…' : ''));
-
   loadSettings();
   restoreSession();
   await loadGlossary();
@@ -1392,19 +1376,23 @@ async function init() {
 
   initSupabase();
 
-  // Check for encrypted config in URL hash
-  if (location.hash.startsWith('#config=')) {
-    const payload = location.hash.slice('#config='.length);
-    const imported = await handleConfigImport(payload);
-    // Only strip hash after successful import — if cancelled or failed,
+  // Check for encrypted config in URL (query param or legacy hash)
+  const params = new URLSearchParams(location.search);
+  const configPayload = params.get('config')
+    || (location.hash.startsWith('#config=') ? location.hash.slice('#config='.length) : null);
+
+  if (configPayload) {
+    const imported = await handleConfigImport(decodeURIComponent(configPayload));
+    // Only strip config param after successful import — if cancelled or failed,
     // keep it so the user can re-open in Safari and try again
     if (imported) {
-      history.replaceState(null, '', location.pathname + location.search);
+      params.delete('config');
+      const clean = params.toString();
+      history.replaceState(null, '', location.pathname + (clean ? '?' + clean : ''));
     }
   }
 
   // Check for audience mode
-  const params = new URLSearchParams(location.search);
   const audienceSession = params.get('session');
   if (audienceSession) {
     enterAudienceMode(audienceSession);
