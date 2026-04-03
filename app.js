@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.7';
+const APP_VERSION = '0.6.8';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -379,14 +379,20 @@ async function handleConfigImport(payload) {
     let config;
     try {
       config = await decryptConfig(payload, pin);
-    } catch {
+    } catch (decErr) {
       // Wrong PIN or corrupted — show error inline, loop to retry
       pinError.textContent = 'Wrong PIN or corrupted data. Try again.';
       pinError.classList.remove('hidden');
       pinOverlay.classList.remove('hidden');
       pinDialog.classList.remove('hidden');
+      console.error('[config-import] decrypt failed:', decErr);
       continue;
     }
+
+    // DEBUG: show what we got (remove after debugging)
+    const got = [config.o ? 'O' : '-', config.a ? 'A' : '-', config.w ? 'W' : '-'].join('');
+    console.log('[config-import] decrypted keys:', got);
+    alert('Decrypt OK: keys=' + got + ' inApp=' + isInAppBrowser());
 
     // Decryption succeeded — apply keys directly to input fields first
     // (works even if localStorage is unavailable, e.g. iOS in-app browsers)
@@ -402,8 +408,16 @@ async function handleConfigImport(payload) {
       if (config.w) localStorage.setItem('ccscribe_worker_url', config.w);
       persisted = true;
     } catch (e) {
-      console.warn('localStorage unavailable — config loaded for this session only:', e);
+      console.warn('[config-import] localStorage write failed:', e);
     }
+
+    // DEBUG: verify input fields were set (remove after debugging)
+    const verify = [
+      openaiKeyInput.value ? 'O' : '-',
+      anthropicKeyInput.value ? 'A' : '-',
+      workerUrlInput.value ? 'W' : '-'
+    ].join('');
+    alert('Inputs set: ' + verify + ' localStorage: ' + (persisted ? 'OK' : 'FAIL'));
 
     if (persisted && isInAppBrowser()) {
       showToast('Config loaded! Open in Safari (tap \u2197 icon) to keep it permanently.');
