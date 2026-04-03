@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.11';
+const APP_VERSION = '0.6.12';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -834,6 +834,13 @@ function startRecorderCycle() {
 }
 
 async function startRecording() {
+  // DEBUG: what do the inputs actually contain at START time?
+  alert('START check: O=' + (getOpenaiKey() ? 'yes' : 'NO') +
+    ' A=' + (getAnthropicKey() ? 'yes' : 'NO') +
+    ' W=' + (getWorkerUrl() ? 'yes' : 'NO') +
+    ' ls_O=' + (localStorage.getItem('ccscribe_openai_key') ? 'yes' : 'NO') +
+    ' ls_W=' + (localStorage.getItem('ccscribe_worker_url') ? 'yes' : 'NO'));
+
   // Validate API keys
   if (!getOpenaiKey() || !getAnthropicKey() || !getWorkerUrl()) {
     showToast('Enter API keys and Worker URL in settings', true);
