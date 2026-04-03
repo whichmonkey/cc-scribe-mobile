@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.12';
+const APP_VERSION = '0.6.13';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -60,6 +60,7 @@ const feed          = document.getElementById('feed');
 const statusBadge   = document.getElementById('status-badge');
 const shareBtn      = document.getElementById('share-btn');
 const clearBtn      = document.getElementById('clear-btn');
+const saveTranscriptBtn = document.getElementById('save-transcript-btn');
 const settingsBtn   = document.getElementById('settings-btn');
 const settingsPanel = document.getElementById('settings-panel');
 const settingsOverlay = document.getElementById('settings-overlay');
@@ -117,6 +118,7 @@ let fullRecorder = null;
 let fullChunks = [];
 let recordingMimeType = '';
 let sessionStartSegIdx = 0;  // Index into segments[] where current recording began
+let lastSessionTs = '';      // Timestamp of last session (for transcript filename)
 
 // Glossary state (loaded on init)
 let glossaryEntries    = [];   // Full glossary array
@@ -165,6 +167,7 @@ function restoreSession() {
 
     // Enable buttons
     clearBtn.disabled = false;
+    saveTranscriptBtn.disabled = false;
   } catch (e) {
     console.error('Failed to restore session:', e);
   }
@@ -389,16 +392,17 @@ async function handleConfigImport(payload) {
       continue;
     }
 
+    // DEBUG: show exact config.w value
+    alert('config.w = [' + config.w + '] len=' + (config.w || '').length);
+
     // Decryption succeeded — apply keys directly to input fields first
     // (works even if localStorage is unavailable, e.g. iOS in-app browsers)
     if (config.o) openaiKeyInput.value = config.o;
     if (config.a) anthropicKeyInput.value = config.a;
     if (config.w) {
-      // iOS Safari can reject .value on type="url" inputs — use type="text" as workaround
-      const origType = workerUrlInput.type;
       workerUrlInput.type = 'text';
       workerUrlInput.value = config.w;
-      workerUrlInput.type = origType;
+      // Don't change type back — iOS Safari clears the value on type change
     }
 
     // Try persisting to localStorage for future sessions
@@ -959,41 +963,68 @@ async function stopRecording() {
 
 function saveSession() {
   const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-  const saved = [];
 
-  // Save audio recording
+  // Save audio recording (only auto-download — iOS blocks multiple blob downloads)
   if (fullChunks.length > 0) {
     const blob = new Blob(fullChunks, { type: recordingMimeType });
     const ext = recordingMimeType.includes('mp4') ? 'mp4' : 'webm';
     const audioFile = `session_${ts}.${ext}`;
     downloadBlob(blob, audioFile);
-    saved.push(audioFile);
+    showToast(`Saved: ${audioFile}`);
     fullChunks = [];
   }
 
-  // Save transcript (only segments from this recording session)
-  const sessionSegments = segments.slice(sessionStartSegIdx);
-  if (sessionSegments.length > 0) {
-    const lines = [];
-    for (const seg of sessionSegments) {
-      const m = Math.floor((seg.start_time || 0) / 60);
-      const s = Math.floor((seg.start_time || 0) % 60);
-      const stamp = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-      lines.push(`[${stamp}]`);
-      if (seg.chinese) lines.push(`ZH: ${seg.chinese}`);
-      if (seg.english) lines.push(`EN: ${seg.english}`);
-      if (seg.polish)  lines.push(`PL: ${seg.polish}`);
-      lines.push('');
-    }
-    const textBlob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
-    const textFile = `session_${ts}.txt`;
-    downloadBlob(textBlob, textFile);
-    saved.push(textFile);
-  }
+  // Enable the Save Transcript button (user taps it manually)
+  lastSessionTs = ts;
+  updateSaveTranscriptBtn();
+}
 
-  if (saved.length > 0) {
-    showToast(`Saved: ${saved.join(' + ')}`);
+// Build transcript text from current session segments
+function buildTranscriptText() {
+  const sessionSegments = segments.slice(sessionStartSegIdx);
+  if (sessionSegments.length === 0) return null;
+  const lines = [];
+  for (const seg of sessionSegments) {
+    const m = Math.floor((seg.start_time || 0) / 60);
+    const s = Math.floor((seg.start_time || 0) % 60);
+    const stamp = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    lines.push(`[${stamp}]`);
+    if (seg.chinese) lines.push(`ZH: ${seg.chinese}`);
+    if (seg.english) lines.push(`EN: ${seg.english}`);
+    if (seg.polish)  lines.push(`PL: ${seg.polish}`);
+    lines.push('');
   }
+  return lines.join('\n');
+}
+
+async function saveTranscript() {
+  const text = buildTranscriptText();
+  if (!text) { showToast('No transcript to save'); return; }
+  const ts = lastSessionTs || new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const filename = `session_${ts}.txt`;
+  const textBlob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+
+  // Use Web Share API on mobile (works natively on iOS Safari + Android Chrome)
+  if (navigator.canShare && navigator.canShare({ files: [new File([textBlob], filename)] })) {
+    try {
+      await navigator.share({
+        files: [new File([textBlob], filename, { type: 'text/plain' })],
+        title: 'CC Scribe Transcript',
+      });
+      showToast('Transcript shared');
+      return;
+    } catch (e) {
+      if (e.name === 'AbortError') return; // user cancelled share sheet
+    }
+  }
+  // Fallback: direct download (works on desktop + Android Chrome)
+  downloadBlob(textBlob, filename);
+  showToast('Transcript saved');
+}
+
+function updateSaveTranscriptBtn() {
+  const hasSessionSegments = segments.length > sessionStartSegIdx;
+  saveTranscriptBtn.disabled = !hasSessionSegments;
 }
 
 function downloadBlob(blob, filename) {
@@ -1025,6 +1056,7 @@ function clearTranscript() {
 
   // UI
   clearBtn.disabled = true;
+  saveTranscriptBtn.disabled = true;
 }
 
 // ---------------------------------------------------------------------------
@@ -1345,6 +1377,7 @@ recBtn.addEventListener('click', () => {
 });
 
 clearBtn.addEventListener('click', clearTranscript);
+saveTranscriptBtn.addEventListener('click', saveTranscript);
 shareBtn.addEventListener('click', shareSession);
 settingsBtn.addEventListener('click', openSettings);
 settingsClose.addEventListener('click', closeSettings);
