@@ -8,7 +8,7 @@
 
 'use strict';
 
-const APP_VERSION = '0.6.13';
+const APP_VERSION = '0.6.14';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -392,18 +392,11 @@ async function handleConfigImport(payload) {
       continue;
     }
 
-    // DEBUG: show exact config.w value
-    alert('config.w = [' + config.w + '] len=' + (config.w || '').length);
-
     // Decryption succeeded — apply keys directly to input fields first
     // (works even if localStorage is unavailable, e.g. iOS in-app browsers)
     if (config.o) openaiKeyInput.value = config.o;
     if (config.a) anthropicKeyInput.value = config.a;
-    if (config.w) {
-      workerUrlInput.type = 'text';
-      workerUrlInput.value = config.w;
-      // Don't change type back — iOS Safari clears the value on type change
-    }
+    if (config.w) workerUrlInput.value = config.w;
 
     // Try persisting to localStorage for future sessions
     let persisted = false;
@@ -838,13 +831,6 @@ function startRecorderCycle() {
 }
 
 async function startRecording() {
-  // DEBUG: what do the inputs actually contain at START time?
-  alert('START check: O=' + (getOpenaiKey() ? 'yes' : 'NO') +
-    ' A=' + (getAnthropicKey() ? 'yes' : 'NO') +
-    ' W=' + (getWorkerUrl() ? 'yes' : 'NO') +
-    ' ls_O=' + (localStorage.getItem('ccscribe_openai_key') ? 'yes' : 'NO') +
-    ' ls_W=' + (localStorage.getItem('ccscribe_worker_url') ? 'yes' : 'NO'));
-
   // Validate API keys
   if (!getOpenaiKey() || !getAnthropicKey() || !getWorkerUrl()) {
     showToast('Enter API keys and Worker URL in settings', true);
